@@ -1,0 +1,11 @@
+.container {
+  @apply w-full h-screen flex flex-col items-center justify-center bg-sky-50 dark:bg-slate-900;
+
+  .title {
+    @apply pt-10 text-8xl font-bold text-gray-900 dark:text-sky-50;
+  }
+
+  .description {
+    @apply pt-5 text-2xl font-light text-gray-900 dark:text-sky-50;
+  }
+}

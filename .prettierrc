@@ -1,0 +1,24 @@
+{
+  "semi": true,
+  "printWidth": 120,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "jsxSingleQuote": true,
+  "bracketSpacing": true,
+  "arrowParens": "avoid",
+  "importOrder": [
+    "^(react|next)",
+    "<THIRD_PARTY_MODULES>",
+    "^(store|http)",
+    "^layouts",
+    "^components/(.*)$",
+    "^types",
+    "^(hooks|helpers|packages|utils|constants)",
+    "^(assets|@mui/icons-material/)",
+    "^themes",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}

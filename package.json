@@ -6,17 +6,39 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "check-types": "tsc --pretty --noEmit",
+    "check-format": "prettier --check .",
+    "check-lint": "eslint . --ext ts --ext tsx --ext js",
+    "format": "prettier --write . --config ./.prettierrc",
+    "lint": "eslint --fix . --ext ts --ext tsx --ext js",
+    "check-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build",
+    "format-all": "npm run lint && npm run format",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.8",
-    "eslint": "8.27.0",
-    "eslint-config-next": "13.0.2",
+    "eslint": "^8.27.0",
+    "eslint-config-next": "^13.0.2",
     "next": "13.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "4.8.4"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^3.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.2",
+    "prettier": "^2.7.1"
   }
 }

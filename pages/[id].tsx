@@ -18,7 +18,7 @@ export default function Chat({ currentChat }: any) {
 
       <div className={s.container}>
         <h1 className={s.title}>{currentChat.title}</h1>
-        <p className={s.description}>{currentChat.chatContent}</p>
+        <p className={s.description}>Demo chat text</p>
         <button type='button' className={s.button} onClick={toggleDark}>
           switch to {isDark ? 'light mode' : 'dark mode'}
         </button>

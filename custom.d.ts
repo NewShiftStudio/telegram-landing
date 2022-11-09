@@ -1,16 +1,18 @@
+import { StaticImageData } from 'next/image';
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 declare module '*.svg' {
-  const content: any;
-  export default content;
+  const value: StaticImageData;
+  export default value;
 }
 
 declare module '*.png' {
-  const value: any;
+  const value: StaticImageData;
   export default value;
 }
 
 declare module '*.jpeg' {
-  const value: any;
+  const value: StaticImageData;
   export default value;
 }
 

@@ -3,11 +3,11 @@
   @apply w-full h-screen flex flex-col items-center justify-center bg-sky-50 dark:bg-slate-900;
 
   .title {
-    @apply pt-10 text-8xl font-bold text-slate-900 dark:text-sky-50;
+    @apply pt-10 text-center text-xl md:text-2xl xl:text-8xl font-bold text-slate-900 dark:text-sky-50;
   }
 
   .description {
-    @apply pt-5 text-2xl font-light text-slate-900 dark:text-sky-50;
+    @apply pt-5 text-base md:text-xl xl:text-2xl  font-light text-slate-900 dark:text-sky-50;
   }
 
   .button {

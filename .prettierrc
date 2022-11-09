@@ -14,12 +14,12 @@
     "^layouts",
     "^components/(.*)$",
     "^types",
-    "^(hooks|helpers|packages|utils|constants)",
-    "^(assets|@mui/icons-material/)",
+    "^(hooks|helpers|packages|utils|constants|errors)",
     "^themes",
 
-    "^(.?./)+(?!\\w+((.module.css)|(.styles)))",
-    "^(.?./)+\\w+((.styles)|(.module.css))"
+    "^(\\.?\\.\\/)+\\w+\\.(?!(s?css|module\\.s?css|styles))",
+    "^(.?./)+",
+    "^assets"
   ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true

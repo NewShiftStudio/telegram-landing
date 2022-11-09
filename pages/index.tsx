@@ -7,6 +7,7 @@ import s from './index.module.scss';
 export default function Home() {
   const { isDark, toggleDark } = useDarkMode();
   const currentChat = chatsList[0];
+
   return (
     <>
       <Head>

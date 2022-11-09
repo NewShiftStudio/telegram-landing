@@ -14,21 +14,18 @@ module.exports = {
           implementation: require('postcss'),
         },
       },
-      use: /.*\.scss/
-    }
+      use: /.*\.scss/,
+    },
   ],
   core: {
     builder: 'webpack5',
   },
-  webpackFinal: (config) => {
+  webpackFinal: config => {
     config.resolve.alias = {
       ...config.resolve?.alias,
       '@': [path.resolve(__dirname, '../src/'), path.resolve(__dirname, '../')],
     };
-    config.resolve.roots = [
-      path.resolve(__dirname, '../public'),
-      'node_modules',
-    ];
+    config.resolve.roots = [path.resolve(__dirname, '../public'), 'node_modules'];
 
     return config;
   },

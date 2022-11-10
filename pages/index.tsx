@@ -2,8 +2,7 @@ import Head from 'next/head';
 
 import { chatsList } from '../constants/chats';
 import { useDarkMode } from '../hooks/useDarkMode';
-
-import s from './index.module.css';
+import s from './index.module.scss';
 
 export default function Home() {
   const { isDark, toggleDark } = useDarkMode();

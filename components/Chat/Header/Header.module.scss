@@ -1,0 +1,19 @@
+.header {
+  @apply w-full h-[67px] pl-[8px] pr-[32px] py-[20px] flex items-center justify-between;
+
+  .left {
+    @apply flex items-center;
+  }
+
+  .info {
+    @apply flex flex-col items-start ml-[12px];
+  }
+
+  .isOnline {
+    @apply text-sm text-[#6a8ceb];
+  }
+
+  .icon {
+    @apply w-[43px] h-[43px] ml-[23px] rounded-full overflow-hidden;
+  }
+}

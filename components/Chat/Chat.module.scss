@@ -1,68 +1,68 @@
 .chatLink {
-    border-bottom: 1px solid #c9c9c9;
-    transition: all 0.15s ease;
+  border-bottom: 1px solid #c9c9c9;
+  transition: all 0.15s ease;
 
-    @apply px-[20px] py-[10px]  flex cursor-pointer;
+  @apply px-[20px] py-[10px]  flex cursor-pointer;
 
-    .icon {
-        @apply w-[50px] h-[50px] mr-[10px] box-border rounded-full overflow-hidden bg-gray-500;
-        border: 3px solid #fff;
+  .icon {
+    @apply w-[50px] h-[50px] mr-[10px] box-border rounded-full overflow-hidden bg-gray-500;
+    border: 3px solid #fff;
 
-        img {
-            @apply w-full h-full;
+    img {
+      @apply w-full h-full;
+    }
+  }
+
+  .content {
+    width: calc(100% - 60px);
+    @apply flex flex-col items-start;
+  }
+
+  .heading {
+    @apply w-full flex items-center justify-between;
+
+    .title {
+      @apply flex items-center text-base whitespace-nowrap mr-[8px] overflow-hidden text-ellipsis;
+
+      svg {
+        @apply w-[16px] h-[16px] mr-[5px];
+        path {
+          fill: #000000;
         }
+      }
     }
 
-    .content {
-        width: calc(100% - 60px);
-        @apply flex flex-col items-start;
+    .date {
+      color: #838383;
+      @apply text-sm;
     }
+  }
 
-    .heading {
-        @apply w-full flex items-center justify-between;
+  .lastMessage {
+    color: #888888;
+    @apply w-full text-sm whitespace-nowrap overflow-hidden text-ellipsis;
+  }
 
-        .title {
-            @apply flex items-center text-base whitespace-nowrap mr-[8px] overflow-hidden text-ellipsis;
+  &.active {
+    background: #6a8ceb;
 
-            svg {
-                @apply w-[16px] h-[16px] mr-[5px];
-                path {
-                    fill: #000000;
-                }
-            }
+    .title {
+      @apply text-white;
+
+      svg {
+        @apply mr-[5px];
+        path {
+          fill: #ffffff;
         }
-
-        .date {
-            color: #838383;
-            @apply text-sm;
-        }
+      }
     }
 
     .lastMessage {
-        color: #888888;
-        @apply w-full text-sm whitespace-nowrap overflow-hidden text-ellipsis;
+      @apply text-white;
     }
 
-    &.active {
-        background: #6a8ceb;
-
-        .title {
-            @apply text-white;
-
-            svg {
-                @apply mr-[5px];
-                path {
-                    fill: #ffffff;
-                }
-            }
-        }
-
-        .lastMessage {
-            @apply text-white;
-        }
-
-        .date {
-            @apply text-white;
-        }
+    .date {
+      @apply text-white;
     }
+  }
 }

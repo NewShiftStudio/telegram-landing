@@ -1,11 +1,11 @@
 .sidebar {
-    @apply w-full h-screen overflow-x-hidden overflow-y-scroll bg-white dark:bg-gray-900;
+  @apply w-full h-screen overflow-x-hidden overflow-y-scroll bg-white dark:bg-gray-900;
 
-    .title {
-        @apply h-[67px] px-[20px] flex items-center sticky top-0 left-0 bg-white dark:bg-gray-900 text-black dark:text-white;
-    }
+  .title {
+    @apply h-[67px] px-[20px] flex items-center sticky top-0 left-0 bg-white dark:bg-gray-900 text-black dark:text-white;
+  }
 
-    .listIcon {
-        @apply mr-[16px];
-    }
+  .listIcon {
+    @apply mr-[16px];
+  }
 }

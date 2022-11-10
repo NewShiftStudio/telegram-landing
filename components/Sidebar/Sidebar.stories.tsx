@@ -12,7 +12,3 @@ export default {
 const Template: ComponentStory<typeof Sidebar> = args => <Sidebar {...args} />;
 
 export const DefaultState = Template.bind({});
-
-DefaultState.args = {
-  title: '123',
-};

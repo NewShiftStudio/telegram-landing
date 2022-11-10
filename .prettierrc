@@ -14,11 +14,11 @@
     "^layouts",
     "^components/(.*)$",
     "^types",
-    "^(hooks|helpers|packages|utils|constants)",
+    "^(hooks|helpers|packages|utils|constants|errors)",
     "^themes",
 
-    "^(\\.\\.?\\/)+\\w+(/\\w+)*(?!((\\.s?css)|(\\.module\\.s?css)|(\\.styles)))(\\.\\w+)*$",
-    "^(\\.\\.?\\/)+\\w+(/\\w+)*\\.((s?css)|(module\\.s?css)|(styles))",
+    "^(\\.?\\.\\/)+\\w+\\.(?!(s?css|module\\.s?css|styles))",
+    "^(.?./)+",
     "^assets"
   ],
   "importOrderSeparation": true,

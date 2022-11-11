@@ -4,7 +4,6 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <title>New Shift — разработка сайтов, сервисов, приложений, чат-ботов в СПб</title>
         <link rel='icon' href='/favicon.ico' />
         <meta
           name='description'

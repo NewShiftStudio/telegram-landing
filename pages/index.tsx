@@ -11,6 +11,7 @@ export default function Home() {
   return (
     <>
       <Head>
+        <title>New Shift — разработка сайтов, сервисов, приложений, чат-ботов в СПб</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 

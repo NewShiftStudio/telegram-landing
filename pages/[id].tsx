@@ -1,4 +1,4 @@
-import { GetServerSideProps, GetStaticPaths, GetStaticPathsResult, GetStaticProps } from 'next';
+import { GetStaticPaths, GetStaticPathsResult, GetStaticProps } from 'next';
 import Head from 'next/head';
 
 import { chatsList } from '../constants/chats';
@@ -11,7 +11,7 @@ export default function Chat({ currentChat }: any) {
   return (
     <>
       <Head>
-        <title>{currentChat.title}</title>
+        <title>{currentChat.title} | New Shift — разработка сайтов, сервисов, приложений, чат-ботов в СПб</title>
       </Head>
 
       <div className={s.container}>

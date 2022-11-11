@@ -5,6 +5,10 @@
     @apply hidden sm:block;
   }
 
+  .title {
+    @apply w-full overflow-hidden whitespace-nowrap max-w-[200px] md:max-w-[unset] text-ellipsis;
+  }
+
   .mobileButton {
     @apply sm:hidden flex items-center text-[#6A8CEB] text-base;
 
@@ -30,6 +34,6 @@
   }
 
   .icon {
-    @apply w-[43px] h-[43px] ml-[23px] rounded-full overflow-hidden order-1;
+    @apply w-[43px] h-[43px] ml-[23px] bg-gray-500 rounded-full overflow-hidden order-1 md:order-[unset];
   }
 }

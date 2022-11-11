@@ -3,13 +3,13 @@
 
   .sidebar {
     transition: all 0.2s ease;
-    @apply fixed md:static top-0 -translate-x-full overflow-hidden md:translate-x-0 left-0 w-full md:w-[330px] xl:w-[353px] 2xl:w-[493px];
+    @apply fixed top-0 left-0 -translate-x-full overflow-hidden md:translate-x-0  w-full md:w-[330px] xl:w-[353px] 2xl:w-[493px];
   }
 
   .content {
     transition: all 0.2s ease;
 
-    @apply h-full w-full translate-x-0;
+    @apply h-full w-full translate-x-0  md:ml-[330px] xl:ml-[353px] 2xl:ml-[493px];
 
     @media (min-width: 768) {
       width: calc(100vw - 330px);
@@ -22,6 +22,10 @@
     @media (min-width: 1440px) {
       width: calc(100vw - 493px);
     }
+  }
+
+  .header {
+    @apply fixed w-full bg-white right-0 top-0;
   }
 
   &.openedSidebar {

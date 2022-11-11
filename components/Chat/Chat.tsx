@@ -38,10 +38,10 @@ export function Chat({
         <div className={s.icon}>{image && <Image src={image} width={50} height={50} alt='chat image' />}</div>
         <div className={s.content}>
           <div className={s.heading}>
-            <p className={s.title}>
+            <div className={s.title}>
               {titleIcon && chatTitleIcons[titleIcon]}
-              {title}
-            </p>
+              <p className={s.titleText}>{title}</p>
+            </div>
             <p className={s.date}>{date}</p>
           </div>
           <p className={s.lastMessage}>{lastMessageText}</p>

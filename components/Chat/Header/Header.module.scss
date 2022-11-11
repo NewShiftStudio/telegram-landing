@@ -1,0 +1,35 @@
+.header {
+  @apply w-full h-[67px] px-[10px] py-[16px] md:pl-[8px] md:pr-[32px] md:py-[20px] flex items-center justify-between;
+
+  .button {
+    @apply hidden sm:block;
+  }
+
+  .mobileButton {
+    @apply sm:hidden flex items-center text-[#6A8CEB] text-base;
+
+    img {
+      @apply w-[12px] h-[20px] mr-[8px] object-cover;
+    }
+  }
+
+  .left {
+    @apply w-full md:w-fit flex items-center justify-between md:justify-start;
+  }
+
+  .phoneLink {
+    @apply hidden md:block;
+  }
+
+  .info {
+    @apply flex flex-col items-center md:items-start ml-[12px];
+  }
+
+  .isOnline {
+    @apply text-sm text-[#6a8ceb];
+  }
+
+  .icon {
+    @apply w-[43px] h-[43px] ml-[23px] rounded-full overflow-hidden order-1;
+  }
+}

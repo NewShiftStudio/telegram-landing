@@ -26,11 +26,7 @@ export const Message = ({ text, image, date, isOutgoing, withTail }: Props) => (
     </div>
     {withTail && (
       <div className={cn(s.tail, { [s.right]: isOutgoing })}>
-        {isOutgoing ? (
-          <Image src={rightMessageTail} width={6} height={10} alt='tail' />
-        ) : (
-          <Image src={leftMessageTail} width={6} height={10} alt='tail' />
-        )}
+        <Image src={isOutgoing ? rightMessageTail : leftMessageTail} width={6} height={10} alt='tail' />
       </div>
     )}
   </div>

@@ -28,6 +28,10 @@
     @apply fixed w-full bg-white right-0 top-0;
   }
 
+  .footer {
+    @apply fixed w-full bg-white right-0 bottom-0;
+  }
+
   &.openedSidebar {
     .sidebar {
       @apply translate-x-0;

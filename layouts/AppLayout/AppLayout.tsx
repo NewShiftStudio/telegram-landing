@@ -4,8 +4,10 @@ import React, { ReactNode, useCallback, useState } from 'react';
 import cn from 'classnames';
 
 import { ChatHeader } from '../../components/Chat/Header/Header';
+import { InputBlock } from '../../components/InputBlock/InputBlock';
 import { Sidebar } from '../../components/Sidebar/Sidebar';
 import { chatsList } from '../../constants/chats';
+import { menuLinks, phoneLink } from '../../constants/commonLinks';
 import s from './AppLayout.module.scss';
 
 type Props = {
@@ -28,6 +30,10 @@ export const AppLayout = ({ children }: Props) => {
     setIsSidebarOpened(true);
   }, []);
 
+  const handleSendMessage = (message: string) => {
+    console.log(message);
+  };
+
   return (
     <div className={cn(s.container, { [s.openedSidebar]: isSidebarOpened })}>
       <div className={s.sidebar}>
@@ -39,11 +45,14 @@ export const AppLayout = ({ children }: Props) => {
             title={openedChat?.title || 'Чат не найден'}
             image={openedChat?.image?.src}
             isOnline={!!query}
-            phoneLink='89218650538'
+            phoneLink={phoneLink}
             onClickBack={openSidebar}
           />
         </div>
         {children}
+        <div className={s.footer}>
+          <InputBlock menuLinks={menuLinks} phoneLink={phoneLink} onSend={handleSendMessage} />
+        </div>
       </div>
     </div>
   );

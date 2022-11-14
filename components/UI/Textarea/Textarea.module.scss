@@ -1,0 +1,6 @@
+.textarea {
+  @apply outline-none border-none box-border p-0 m-0 resize-none;
+  &.resize {
+    resize: both;
+  }
+}

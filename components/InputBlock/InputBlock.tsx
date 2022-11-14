@@ -6,6 +6,7 @@ import menu from '../../assets/icons/menu.svg';
 import menuButton from '../../assets/icons/menuButton.svg';
 import phone from '../../assets/icons/phone.svg';
 import sendMessage from '../../assets/icons/sendMessage.svg';
+import { Textarea } from '../UI/Textarea/Textarea';
 import s from './InputBlock.module.scss';
 
 type MenuLink = {
@@ -31,7 +32,7 @@ export const InputBlock = ({ menuLinks, phoneLink, onSend }: Props) => {
     onSend(formData);
   };
 
-  const handleChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChangeInput = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setFormData(e.target.value);
   };
 
@@ -48,12 +49,12 @@ export const InputBlock = ({ menuLinks, phoneLink, onSend }: Props) => {
             <p className={s.menuButtonText}>Menu</p>
             <Image className={s.menuIconMobile} src={menuButton} width={21} height={21} alt='menuButton' />
           </button>
-          <input
+          <Textarea
             value={formData}
             className={s.textInput}
             onChange={handleChangeInput}
             placeholder='Опишите свой проект'
-            type='text'
+            maxRows={4}
           />
         </div>
 

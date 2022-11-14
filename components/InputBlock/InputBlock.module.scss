@@ -1,5 +1,5 @@
 .inputBlock {
-  @apply w-full flex flex-col items-center px-[10px] md:px-[20px];
+  @apply w-full flex flex-col items-center justify-center px-[10px] md:px-[20px] py-[10px];
 
   .right,
   .left {
@@ -7,7 +7,7 @@
   }
 
   .left {
-    @apply flex-1 w-[calc(100%_-_68px)] md:w-[calc(100%_-_78px)];
+    @apply flex-1 items-start w-[calc(100%_-_68px)] md:w-[calc(100%_-_78px)];
   }
 
   .right {
@@ -15,7 +15,7 @@
   }
 
   .menuButton {
-    @apply flex w-[21px] border-[1px] border-gray-500 md:border-none h-[21px] md:h-[unset] md:w-[75px] relative items-center box-content bg-white md:bg-[#6A8CEB] md:px-[8px] md:py-[6px] text-white rounded-[6px]  md:rounded-full;
+    @apply flex w-[21px] border-[1px] border-gray-500 md:border-none outline-none h-[21px] md:h-[unset] md:w-[75px] relative items-center box-content bg-white md:bg-[#6A8CEB] md:px-[8px] md:py-[6px] text-white rounded-[6px]  md:rounded-full;
     &:after {
       content: '';
       @apply hidden md:block absolute top-[-5px] left-[-5px] -z-[1] rounded-full;
@@ -46,7 +46,7 @@
   }
 
   .top {
-    @apply w-full h-[52px] flex items-center justify-between;
+    @apply w-full  flex items-start justify-between;
   }
 
   .fileInput {

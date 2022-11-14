@@ -1,7 +1,31 @@
 .message {
-  @apply relative max-w-[458px] min-w-[80px] w-fit bg-white rounded-[9px] rounded-tl-[5px];
+  @apply flex flex-col items-stretch;
 
-  filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1)) drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.35));
+  .messageContent {
+    @apply relative max-w-[458px] min-w-[80px] w-fit bg-white rounded-[9px] rounded-tl-[5px];
+
+    filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1)) drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.35));
+
+    &.withTail {
+      @apply rounded-bl-none;
+    }
+
+    &.outgoing {
+      @apply bg-[#effedd]  rounded-bl-[9px];
+
+      &.withTail {
+        @apply rounded-br-none;
+      }
+
+      .tail {
+        @apply absolute left-[unset] right-[-6px] bottom-0 w-[6px];
+      }
+
+      .date {
+        @apply text-[#62AC55];
+      }
+    }
+  }
 
   .text {
     @apply text-sm px-[10px] pt-[5px];
@@ -25,25 +49,5 @@
 
   .tail {
     @apply absolute left-[-6px] bottom-0 w-[6px];
-  }
-
-  &.withTail {
-    @apply rounded-bl-none;
-  }
-
-  &.outgoing {
-    @apply bg-[#effedd]  rounded-bl-[9px];
-
-    &.withTail {
-      @apply rounded-br-none;
-    }
-
-    .tail {
-      @apply absolute left-[unset] right-[-6px] bottom-0 w-[6px];
-    }
-
-    .date {
-      @apply text-[#62AC55];
-    }
   }
 }

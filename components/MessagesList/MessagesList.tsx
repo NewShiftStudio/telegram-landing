@@ -2,13 +2,13 @@ import React from 'react';
 
 import cn from 'classnames';
 
-import { TextMessage } from '../../@types/Message';
+import { Message as MessageType } from '../../@types/Message';
 import bg from '../../assets/images/wallpaper.png';
 import { Message } from '../Message/Message';
 import s from './MessagesList.module.scss';
 
 type Props = {
-  messages: TextMessage[];
+  messages: MessageType[];
 };
 
 export const MessagesList = ({ messages }: Props) => (
@@ -21,6 +21,7 @@ export const MessagesList = ({ messages }: Props) => (
           image={message.image}
           isOutgoing={message.isOutgoing}
           date={message.createdAt}
+          link={message.link}
         />
       </div>
     ))}

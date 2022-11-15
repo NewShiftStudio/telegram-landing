@@ -1,0 +1,63 @@
+.inputBlock {
+  @apply w-full flex flex-col items-center justify-center px-[10px] md:px-[20px] py-[10px];
+
+  .right,
+  .left {
+    @apply flex items-center;
+  }
+
+  .left {
+    @apply flex-1 items-start w-[calc(100%_-_68px)] md:w-[calc(100%_-_78px)];
+  }
+
+  .right {
+    @apply w-[68px] md:w-[78px];
+  }
+
+  .menuButton {
+    @apply flex w-[21px] border-[1px] border-gray-500 md:border-none outline-none h-[21px] md:h-[unset] md:w-[75px] relative items-center box-content bg-white md:bg-[#6A8CEB] md:px-[8px] md:py-[6px] text-white rounded-[6px]  md:rounded-full;
+    &:after {
+      content: '';
+      @apply hidden md:block absolute top-[-5px] left-[-5px] -z-[1] rounded-full;
+      width: calc(100% + 10px);
+      height: calc(100% + 10px);
+      background-color: rgba(80, 167, 234, 0.15);
+    }
+  }
+
+  .menuButtonText {
+    @apply hidden md:block;
+  }
+
+  .menuIconMobile {
+    @apply md:hidden w-[22px] h-[22px];
+  }
+
+  .menuIcon {
+    @apply hidden md:block mr-[4px];
+  }
+
+  .textInput {
+    @apply mx-[8px] md:mx-[16px] w-[calc(100%_-_42px)] rounded-[8px] px-[10px] py-[5px] border-none bg-[#00000008] md:bg-transparent outline-none;
+  }
+
+  .attachFile {
+    @apply mr-[14px] md:mr-[24px] cursor-pointer;
+  }
+
+  .top {
+    @apply w-full  flex items-start justify-between;
+  }
+
+  .fileInput {
+    @apply hidden;
+  }
+
+  .menuLinks {
+    @apply w-full mt-[16px] columns-1 lg:columns-2 gap-[20px];
+  }
+
+  .menuLink {
+    @apply h-[48px] lg:h-[147px] flex justify-center items-center rounded-[6px] text-base bg-[#00000008] mt-[4px] lg:mt-[16px]  first:mt-0;
+  }
+}

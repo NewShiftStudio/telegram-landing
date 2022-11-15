@@ -8,7 +8,7 @@ import leftMessageTail from '../../assets/icons/leftMessageTail.svg';
 import readIcon from '../../assets/icons/readIcon.svg';
 import rightMessageTail from '../../assets/icons/rightMessageTail.svg';
 import { LinkMessage } from '../LinkMessage/LinkMessage';
-import s from './Message.module.scss';
+import s from './MessageItem.module.scss';
 
 type Props = {
   text?: string;
@@ -19,7 +19,7 @@ type Props = {
   link?: MessageLink;
 };
 
-export const Message = ({ text, image, date, isOutgoing, withTail, link }: Props) => (
+export const MessageItem = ({ text, image, date, isOutgoing, withTail, link }: Props) => (
   <div className={s.message}>
     <div className={cn(s.messageContent, { [s.outgoing]: isOutgoing, [s.withTail]: withTail })}>
       {image && <Image className={s.image} src={image} width={1} height={1} alt='message image' />}

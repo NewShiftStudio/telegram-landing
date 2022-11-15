@@ -1,5 +1,7 @@
+import { MenuLink } from '../components/InputBlock/InputBlock';
+
 export const phoneLink = '89999999999';
-export const menuLinks = [
+export const menuLinks: MenuLink[] = [
   {
     title: 'Telegram',
     href: '#',

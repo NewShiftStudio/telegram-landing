@@ -9,7 +9,7 @@ import sendMessage from '../../assets/icons/sendMessage.svg';
 import { Textarea } from '../UI/Textarea/Textarea';
 import s from './InputBlock.module.scss';
 
-type MenuLink = {
+export type MenuLink = {
   title: string;
   href: string;
 };
@@ -32,13 +32,12 @@ export const InputBlock = ({ menuLinks, phoneLink, onSend }: Props) => {
     onSend(formData);
   };
 
-  const handleChangeInput = (e: ChangeEvent<HTMLTextAreaElement>) => {
+  const handleChangeInput = useCallback((e: ChangeEvent<HTMLTextAreaElement>) => {
     setFormData(e.target.value);
-  };
-
-  const toggleMenu = useCallback(() => {
-    setIsMenuOpened(prevState => !prevState);
   }, []);
+  const toggleMenu = () => {
+    setIsMenuOpened(prevState => !prevState);
+  };
 
   return (
     <div className={s.inputBlock}>

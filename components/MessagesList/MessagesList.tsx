@@ -12,7 +12,7 @@ type Props = {
 };
 
 export const MessagesList = ({ messages }: Props) => (
-  <div className={s.messagesList} style={{ backgroundImage: `url(${bg})` }}>
+  <div className={s.messagesList} style={{ backgroundImage: `url(${bg.src})` }}>
     {messages.map(message => (
       <div key={message.id} className={cn(s.message, { [s.outgoing]: message.isOutgoing })}>
         <MessageItem

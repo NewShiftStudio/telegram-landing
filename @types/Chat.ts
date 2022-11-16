@@ -1,5 +1,7 @@
 import { StaticImageData } from 'next/image';
 
+import { Message } from './Message';
+
 export type Chat = {
   path: string;
   title: string;
@@ -11,4 +13,5 @@ export type Chat = {
   isActive?: boolean;
   isOnline?: boolean;
   isPinned?: boolean;
+  messages?: Message[];
 };

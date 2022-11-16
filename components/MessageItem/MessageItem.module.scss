@@ -2,7 +2,7 @@
   @apply flex flex-col items-stretch;
 
   .messageContent {
-    @apply relative max-w-[458px] min-w-[80px] w-fit bg-white rounded-[9px] rounded-tl-[5px];
+    @apply relative max-w-[458px] min-w-[80px] w-fit bg-white overflow-hidden rounded-[9px];
 
     filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1)) drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.35));
 
@@ -11,7 +11,7 @@
     }
 
     &.outgoing {
-      @apply bg-[#effedd]  rounded-bl-[9px];
+      @apply bg-[#effedd] rounded-bl-[9px];
 
       &.withTail {
         @apply rounded-br-none;
@@ -28,7 +28,7 @@
   }
 
   .text {
-    @apply text-sm px-[10px] pt-[5px];
+    @apply text-sm px-[10px] pt-[5px] whitespace-pre-line;
   }
 
   .bottom {
@@ -36,7 +36,7 @@
   }
 
   .image {
-    @apply w-full rounded-tr-[9px] rounded-tl-[5px];
+    @apply w-full;
   }
 
   .readIcon {

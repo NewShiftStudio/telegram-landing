@@ -1,8 +1,6 @@
-import Image from 'next/image';
 import React from 'react';
 
 import { Chat as ChatType } from '../../@types/Chat';
-import listIcon from '../../assets/icons/burger.svg';
 import { useDarkMode } from '../../hooks/useDarkMode';
 import { Chat } from '../Chat/Chat';
 import { ThemeSwitch } from '../UI/ThemeSwitch/ThemeSwitch';
@@ -24,11 +22,15 @@ export const Sidebar = ({ chatsList, openedLink, onClick }: Props) => {
   return (
     <div className={s.sidebar}>
       <div className={s.title}>
-        <Image className={s.listIcon} src={listIcon} alt='list' />
-        <p>Чаты</p>
-        <div className='toggleTheme'>
-          <ThemeSwitch isActive={isDark} onChange={onChangeTheme} />
+        <div className={s.left}>
+          <div className={s.listIcon}>
+            <svg width='16' height='11' viewBox='0 0 16 11' fill='none' xmlns='http://www.w3.org/2000/svg'>
+              <path d='M0.5 5.5H15.5M0.5 0.5H15.5M0.5 10.5H15.5' stroke='black' strokeLinecap='round' />
+            </svg>
+          </div>
+          <p>Чаты</p>
         </div>
+        <ThemeSwitch isActive={isDark} onChange={onChangeTheme} />
       </div>
       {chatsList.map(chat => (
         <Chat

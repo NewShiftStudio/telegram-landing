@@ -25,11 +25,11 @@
   }
 
   .header {
-    @apply fixed w-full bg-white right-0 top-0;
+    @apply fixed w-full bg-white right-0 top-0 dark:bg-[#0D0D0D];
   }
 
   .footer {
-    @apply absolute w-full bg-white right-0 bottom-0;
+    @apply absolute w-full bg-white right-0 bottom-0 dark:bg-[#0D0D0D];
   }
 
   &.openedSidebar {

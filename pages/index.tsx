@@ -1,13 +1,11 @@
+import { GetStaticPaths, GetStaticPathsResult, GetStaticProps } from 'next';
 import Head from 'next/head';
 
 import { chatsList } from '../constants/chats';
 import { useDarkMode } from '../hooks/useDarkMode';
 import s from './index.module.scss';
 
-export default function Home() {
-  const { isDark, toggleDark } = useDarkMode();
-  const currentChat = chatsList[0];
-
+export default function Home({ mainChat }: any) {
   return (
     <>
       <Head>
@@ -16,12 +14,19 @@ export default function Home() {
       </Head>
 
       <div className={s.container}>
-        <h1 className={s.title}>{currentChat.title}</h1>
+        <h1 className={s.title}>{mainChat.title}</h1>
         <p className={s.description}>This next app user tailwind with module scss</p>
-        <button type='button' className={s.button} onClick={toggleDark}>
-          switch to {isDark ? 'light mode' : 'dark mode'}
-        </button>
       </div>
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = context => {
+  const currentChat = chatsList[0];
+
+  return {
+    props: {
+      mainChat: currentChat,
+    },
+  };
+};

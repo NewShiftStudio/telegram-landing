@@ -1,0 +1,39 @@
+.wrapper {
+  .input {
+    @apply hidden;
+  }
+
+  .switch {
+    @apply relative w-[45px] h-[20px] rounded-full bg-[#00000012] dark:bg-[#2A2A2A];
+  }
+
+  .point {
+    transition: all 0.2s ease;
+    @apply absolute top-1/2 -translate-y-1/2 left-[3px] w-[15px] h-[15px] rounded-full bg-[#6A8CEB];
+
+    .icon {
+      @apply top-1/2 left-1/2 translate-y-1/2 translate-x-1/2;
+    }
+
+    .dark {
+      @apply hidden;
+    }
+    .light {
+      @apply visible;
+    }
+  }
+
+  .switch.active {
+    .point {
+      @apply absolute left-[calc(100%_-_18px)];
+
+      .dark {
+        @apply visible;
+      }
+
+      .light {
+        @apply hidden;
+      }
+    }
+  }
+}

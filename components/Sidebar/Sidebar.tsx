@@ -13,11 +13,7 @@ type Props = {
 };
 
 export const Sidebar = ({ chatsList, openedLink, onClick }: Props) => {
-  const { isDark, toggleDark } = useDarkMode();
-
-  const onChangeTheme = () => {
-    toggleDark();
-  };
+  const { isDark, toggleIsDark } = useDarkMode();
 
   return (
     <div className={s.sidebar}>
@@ -30,7 +26,7 @@ export const Sidebar = ({ chatsList, openedLink, onClick }: Props) => {
           </div>
           <p>Чаты</p>
         </div>
-        <ThemeSwitch isActive={isDark} onChange={onChangeTheme} />
+        <ThemeSwitch isActive={!!isDark} onChange={toggleIsDark} />
       </div>
       {chatsList.map(chat => (
         <Chat

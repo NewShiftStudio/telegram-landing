@@ -10,7 +10,6 @@ import { Sidebar } from '../../components/Sidebar/Sidebar';
 import { chatsList } from '../../constants/chats';
 import { menuLinks, phoneLink } from '../../constants/commonLinks';
 import useMediaQuery from '../../hooks/useMediaQuery';
-
 import s from './AppLayout.module.scss';
 
 type Props = {
@@ -37,7 +36,7 @@ export const AppLayout = ({ children }: Props) => {
   const router = useRouter();
   const query = (router.query.id || '/') as string;
 
-  const isMobile = useMediaQuery('(max-width: 767px)'); // сомнительное решение
+  const isMobile = useMediaQuery('(max-width: 1024px)');
 
   const [isSidebarOpened, setIsSidebarOpened] = useState(true);
 

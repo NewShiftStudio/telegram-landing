@@ -10,18 +10,6 @@
     transition: all 0.2s ease;
 
     @apply h-full w-full translate-x-0;
-
-    @media (min-width: 768) {
-      width: calc(100vw - 330px);
-    }
-
-    @media (min-width: 1240px) {
-      width: calc(100vw - 353px);
-    }
-
-    @media (min-width: 1440px) {
-      width: calc(100vw - 493px);
-    }
   }
 
   .header {

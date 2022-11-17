@@ -20,6 +20,7 @@ const resizableProps: ResizableProps = {
     height: '100%',
   },
   minWidth: 330,
+  maxWidth: 500,
   onResize: (_event, _direction, elemRef, _delta) => {
     elemRef.style.maxWidth = 'calc(100vw - 350px)';
   },

@@ -76,7 +76,7 @@ export const AppLayout = ({ children }: Props) => {
             onClickBack={openSidebar}
           />
         </div>
-        {children}
+        <div className={s.chat}>{children}</div>
         <div className={s.footer}>
           <InputBlock menuLinks={menuLinks} phoneLink={phoneLink} onSend={handleSendMessage} />
         </div>

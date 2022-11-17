@@ -1,18 +1,22 @@
 import { GetStaticPaths, GetStaticPathsResult, GetStaticProps } from 'next';
 import Head from 'next/head';
 
-import { MessagesList } from 'components/MessagesList/MessagesList';
-
+import { Chat } from '../@types/Chat';
+import { MessagesList } from '../components/MessagesList/MessagesList';
 import { chatsList } from '../constants/chats';
 
-export default function Chat({ currentChat }: any) {
+type Props = {
+  currentChat: Chat;
+};
+
+export default function ChatPage({ currentChat }: Props) {
   return (
     <>
       <Head>
         <title>{currentChat.title} | New Shift — разработка сайтов, сервисов, приложений, чат-ботов в СПб</title>
       </Head>
 
-      <MessagesList messages={[]} />
+      <MessagesList messages={currentChat.messages || []} />
     </>
   );
 }

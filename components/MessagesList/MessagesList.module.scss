@@ -1,5 +1,5 @@
 .messagesList {
-  @apply w-full h-full pt-[16px] pb-[30px] px-[20px] dark:bg-[#151617];
+  @apply w-full h-full overflow-y-scroll flex flex-col-reverse pt-[16px] pb-[30px] px-[20px] dark:bg-[#151617];
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

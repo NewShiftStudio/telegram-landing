@@ -24,10 +24,14 @@
       @apply flex items-center text-base whitespace-nowrap mr-[8px] overflow-hidden text-ellipsis dark:text-white;
 
       svg {
-        @apply w-[16px] h-[16px] mr-[5px];
+        @apply w-[16px] h-[16px] min-w-[16px] mr-[5px];
         path {
           @apply bg-black dark:fill-white;
         }
+      }
+
+      .titleText {
+        @apply whitespace-nowrap overflow-hidden text-ellipsis;
       }
     }
 
@@ -50,7 +54,9 @@
     }
 
     .title {
-      @apply text-white;
+      .titleText {
+        @apply text-white;
+      }
 
       svg {
         @apply mr-[5px];

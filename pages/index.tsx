@@ -1,8 +1,7 @@
-import { GetStaticPaths, GetStaticPathsResult, GetStaticProps } from 'next';
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 
 import { chatsList } from '../constants/chats';
-import { useDarkMode } from '../hooks/useDarkMode';
 import s from './index.module.scss';
 
 export default function Home({ mainChat }: any) {

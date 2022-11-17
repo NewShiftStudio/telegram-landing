@@ -22,6 +22,8 @@ export const useDarkMode = () => {
   }, []);
 
   useEffect(() => {
+    console.log(isDark);
+
     if (isDark) {
       document.documentElement.classList.add('dark');
       localStorage.setItem(themeKey, themeMode.DARK);

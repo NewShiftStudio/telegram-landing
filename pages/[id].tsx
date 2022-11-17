@@ -1,9 +1,9 @@
 import { GetStaticPaths, GetStaticPathsResult, GetStaticProps } from 'next';
 import Head from 'next/head';
 
+import { MessagesList } from 'components/MessagesList/MessagesList';
+
 import { chatsList } from '../constants/chats';
-import { useDarkMode } from '../hooks/useDarkMode';
-import s from './index.module.scss';
 
 export default function Chat({ currentChat }: any) {
   return (
@@ -12,9 +12,7 @@ export default function Chat({ currentChat }: any) {
         <title>{currentChat.title} | New Shift — разработка сайтов, сервисов, приложений, чат-ботов в СПб</title>
       </Head>
 
-      <div className={s.container}>
-        <p className={s.description}>{currentChat.title}</p>
-      </div>
+      <MessagesList messages={[]} />
     </>
   );
 }

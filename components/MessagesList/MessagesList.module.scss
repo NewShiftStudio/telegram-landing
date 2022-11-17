@@ -1,9 +1,8 @@
 .messagesList {
-  @apply w-full h-full pt-[16px] pb-[30px] px-[20px];
+  @apply w-full h-full pt-[16px] pb-[30px] px-[20px] dark:bg-[#151617];
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
   .message {
     @apply w-full mt-[6px] flex justify-start;
 

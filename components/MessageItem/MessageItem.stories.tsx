@@ -2,14 +2,14 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Message } from './Message';
+import { MessageItem } from './MessageItem';
 
 export default {
-  title: 'Message/Message',
-  component: Message,
-} as ComponentMeta<typeof Message>;
+  title: 'Message/MessageItem',
+  component: MessageItem,
+} as ComponentMeta<typeof MessageItem>;
 
-const Template: ComponentStory<typeof Message> = args => <Message {...args} />;
+const Template: ComponentStory<typeof MessageItem> = args => <MessageItem {...args} />;
 
 export const DefaultState = Template.bind({});
 

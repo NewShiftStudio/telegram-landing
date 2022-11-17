@@ -8,7 +8,6 @@ export default function ErrorPage() {
       <Head>
         <title>Чат не найден</title>
         <meta name='description' content='Чат не найден' />
-        <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <div className={s.container}>

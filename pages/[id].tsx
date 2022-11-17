@@ -1,26 +1,22 @@
 import { GetStaticPaths, GetStaticPathsResult, GetStaticProps } from 'next';
 import Head from 'next/head';
 
+import { Chat } from '../@types/Chat';
+import { MessagesList } from '../components/MessagesList/MessagesList';
 import { chatsList } from '../constants/chats';
-import { useDarkMode } from '../hooks/useDarkMode';
-import s from './index.module.scss';
 
-export default function Chat({ currentChat }: any) {
-  const { isDark, toggleDark } = useDarkMode();
+type Props = {
+  currentChat: Chat;
+};
 
+export default function ChatPage({ currentChat }: Props) {
   return (
     <>
       <Head>
         <title>{currentChat.title} | New Shift — разработка сайтов, сервисов, приложений, чат-ботов в СПб</title>
       </Head>
 
-      <div className={s.container}>
-        <h1 className={s.title}>{currentChat.title}</h1>
-        <p className={s.description}>Demo chat text</p>
-        <button type='button' className={s.button} onClick={toggleDark}>
-          switch to {isDark ? 'light mode' : 'dark mode'}
-        </button>
-      </div>
+      <MessagesList messages={currentChat.messages || []} />
     </>
   );
 }
@@ -48,18 +44,3 @@ export const getStaticProps: GetStaticProps = context => {
     },
   };
 };
-
-// export const getServerSideProps: GetServerSideProps = async context => {
-//   const id = context.query.id as string | undefined;
-//   const currentChat = chatsList.find(chat => chat.path === id);
-//   if (!currentChat) {
-//     return {
-//       notFound: true,
-//     };
-//   }
-//   return {
-//     props: {
-//       currentChat,
-//     },
-//   };
-// };

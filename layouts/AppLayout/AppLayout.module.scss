@@ -13,7 +13,11 @@
   }
 
   .header {
-    @apply fixed w-full bg-white right-0 top-0;
+    @apply fixed w-full bg-white right-0 top-0 z-10;
+  }
+
+  .chat {
+    @apply h-full pt-[67px] pb-[56px] flex justify-end;
   }
 
   .footer {

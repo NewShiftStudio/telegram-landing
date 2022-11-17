@@ -9,6 +9,8 @@ import integrations from '../assets/images/avatar/integrations.png';
 import promotion from '../assets/images/avatar/promotion.png';
 import pwa from '../assets/images/avatar/pwa.png';
 import web from '../assets/images/avatar/web.png';
+import { appsMessages } from './messages/apps';
+import { developMessages } from './messages/develop';
 
 export const chatsList: Chat[] = [
   {
@@ -43,6 +45,15 @@ export const chatsList: Chat[] = [
     lastMessageText: 'Ведем разработку любой сложности',
     image: web,
     titleIcon: 'bot',
+    messages: developMessages,
+  },
+  {
+    path: 'apps',
+    title: 'Мобильные приложения',
+    lastMessageText: 'Мобильные приложения для любого типа бизнеса',
+    image: apps,
+    titleIcon: 'peoples',
+    messages: appsMessages,
   },
   {
     path: 'promotion',
@@ -65,13 +76,7 @@ export const chatsList: Chat[] = [
     image: blockchain,
     titleIcon: 'megaphone',
   },
-  {
-    path: 'apps',
-    title: 'Мобильные приложения',
-    lastMessageText: 'Мобильные приложения для любого типа бизнеса',
-    image: apps,
-    titleIcon: 'peoples',
-  },
+
   {
     path: 'integrations',
     title: 'Интеграции',

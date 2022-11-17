@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import React from 'react';
+import Image, { StaticImageData } from 'next/image';
+import React, { ReactNode } from 'react';
 
 import cn from 'classnames';
 
@@ -11,8 +11,8 @@ import { LinkMessage } from '../LinkMessage/LinkMessage';
 import s from './MessageItem.module.scss';
 
 type Props = {
-  text?: string;
-  image?: string;
+  text?: ReactNode;
+  image?: string | StaticImageData;
   date: string;
   withTail?: boolean;
   isOutgoing?: boolean;
@@ -22,8 +22,8 @@ type Props = {
 export const MessageItem = ({ text, image, date, isOutgoing, withTail, link }: Props) => (
   <div className={s.message}>
     <div className={cn(s.messageContent, { [s.outgoing]: isOutgoing, [s.withTail]: withTail })}>
-      {image && <Image className={s.image} src={image} width={1} height={1} alt='message image' />}
-      {text && <div className={s.text}>{text}</div>}
+      {image && <Image className={s.image} src={image} width={500} height={400} alt='message image' />}
+      {text && <p className={s.text}>{text}</p>}
       <div className={s.bottom}>
         <p className={s.date}>{date}</p>
         {isOutgoing && <Image src={readIcon} className={s.readIcon} width={18} height={18} alt='read' />}

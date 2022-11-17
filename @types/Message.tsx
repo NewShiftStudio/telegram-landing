@@ -1,9 +1,12 @@
+import { StaticImageData } from 'next/image';
+import { ReactNode } from 'react';
+
 export type Message = {
   id: number;
   createdAt: string;
   text?: string;
-  image?: string;
-  isOutgoing: boolean;
+  image?: string | StaticImageData;
+  isOutgoing?: boolean;
   link?: MessageLink;
 };
 

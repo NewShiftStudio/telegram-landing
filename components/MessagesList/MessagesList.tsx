@@ -5,7 +5,8 @@ import cn from 'classnames';
 import { useDarkMode } from 'hooks/useDarkMode';
 
 import { Message as MessageType } from '../../@types/Message';
-import bg from '../../assets/images/wallpaper.png';
+import darkBg from '../../assets/images/bg_dark.svg';
+import lightBg from '../../assets/images/bg_light.svg';
 import { MessageItem } from '../MessageItem/MessageItem';
 import s from './MessagesList.module.scss';
 
@@ -17,7 +18,8 @@ export const MessagesList = ({ messages }: Props) => {
   const { isDark } = useDarkMode();
 
   return (
-    <div className={s.messagesList} style={{ backgroundImage: !isDark ? `url(${bg.src})` : 'none' }}>
+    <div className={s.messagesList} style={{ backgroundImage: `url(${isDark ? darkBg.src : lightBg.src})` }}>
+      <div className={s.background} />
       {messages.map(message => (
         <div key={message.id} className={cn(s.message, { [s.outgoing]: message.isOutgoing })}>
           <MessageItem

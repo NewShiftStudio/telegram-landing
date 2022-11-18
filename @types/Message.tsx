@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 
 export type Message = {
   id: number;
-  createdAt: string;
+  createdAt?: string;
   text?: string;
   image?: string | StaticImageData;
   isOutgoing?: boolean;

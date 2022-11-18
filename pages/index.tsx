@@ -1,13 +1,16 @@
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 
+import { MessagesList } from 'components/MessagesList/MessagesList';
+
+import { Chat } from '../@types/Chat';
 import { chatsList } from '../constants/chats';
-import { useDarkMode } from '../hooks/useDarkMode';
-import s from './index.module.scss';
 
-export default function Home() {
-  const { isDark, toggleDark } = useDarkMode();
-  const currentChat = chatsList[0];
+type Props = {
+  mainChat: Chat;
+};
 
+export default function Home({ mainChat }: Props) {
   return (
     <>
       <Head>
@@ -15,13 +18,17 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <div className={s.container}>
-        <h1 className={s.title}>{currentChat.title}</h1>
-        <p className={s.description}>This next app user tailwind with module scss</p>
-        <button type='button' className={s.button} onClick={toggleDark}>
-          switch to {isDark ? 'light mode' : 'dark mode'}
-        </button>
-      </div>
+      <MessagesList messages={mainChat.messages || []} />
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = context => {
+  const currentChat = chatsList[0];
+
+  return {
+    props: {
+      mainChat: currentChat,
+    },
+  };
+};

@@ -3,7 +3,7 @@
 
   .right,
   .left {
-    @apply flex items-center;
+    @apply flex items-center min-h-[30px] md:h-[36px];
   }
 
   .left {
@@ -15,10 +15,10 @@
   }
 
   .menuButton {
-    @apply flex w-[21px] border-[1px] border-gray-500 md:border-none outline-none h-[21px] md:h-[unset] md:w-[75px] relative items-center box-content bg-white md:bg-[#6A8CEB] md:px-[8px] md:py-[6px] text-white rounded-[6px]  md:rounded-full;
+    @apply flex mt-[4px] md:mt-0 w-[21px] z-20 border-[1px] border-gray-500 md:border-none outline-none h-[21px] md:h-[unset] md:w-[75px] relative items-center box-content bg-white dark:bg-[#0D0D0D] md:bg-[#6A8CEB] md:dark:bg-[#6A8CEB] md:px-[8px] md:py-[6px] text-white rounded-[6px]  md:rounded-full;
     &:after {
       content: '';
-      @apply hidden md:block absolute top-[-5px] left-[-5px] -z-[1] rounded-full;
+      @apply hidden md:block absolute top-[-5px] left-[-5px] z-[1] rounded-full;
       width: calc(100% + 10px);
       height: calc(100% + 10px);
       background-color: rgba(80, 167, 234, 0.15);
@@ -26,7 +26,7 @@
   }
 
   .menuButtonText {
-    @apply hidden md:block;
+    @apply hidden md:block font-light font-['Roboto'];
   }
 
   .menuIconMobile {
@@ -38,7 +38,18 @@
   }
 
   .textInput {
-    @apply mx-[8px] md:mx-[16px] w-[calc(100%_-_42px)] rounded-[8px] px-[10px] py-[5px] border-none bg-[#00000008] md:bg-transparent outline-none;
+    @apply font-['Roboto'] mx-[8px] md:mx-[16px] w-[calc(100%_-_42px)] text-sm font-light md:text-base h-[30px] md:h-[36px] rounded-[8px] px-[10px] py-[5px] border-none bg-[#00000008] md:bg-transparent outline-none dark:text-white;
+
+    &::placeholder {
+      @apply dark:text-white;
+      transition: all 0.4s ease;
+    }
+
+    &:focus {
+      &::placeholder {
+        @apply translate-x-[50px] opacity-0;
+      }
+    }
   }
 
   .attachFile {
@@ -58,6 +69,6 @@
   }
 
   .menuLink {
-    @apply h-[48px] lg:h-[147px] flex justify-center items-center rounded-[6px] text-base bg-[#00000008] mt-[4px] lg:mt-[16px]  first:mt-0;
+    @apply h-[48px] lg:h-[147px] font-['Roboto'] flex justify-center items-center rounded-[6px] text-base bg-[#00000008] dark:bg-[#242424] dark:text-white mt-[4px] lg:mt-[16px]  first:mt-0;
   }
 }

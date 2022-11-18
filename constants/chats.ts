@@ -23,14 +23,12 @@ export const chatsList: Chat[] = [
     path: 'guardBot',
     title: 'Спортивные Предприниматели',
     lastMessageText: 'Photo',
-    date: '01.01.22',
     titleIcon: 'bot',
   },
   {
     path: 'questionnaire',
     title: 'Анкета: Спортивные Предприниматели',
     lastMessageText: '2 Some chat content',
-    date: '01.01.22',
     titleIcon: 'bot',
   },
   {

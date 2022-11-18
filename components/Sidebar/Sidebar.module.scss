@@ -1,11 +1,20 @@
 .sidebar {
-  @apply w-full h-screen overflow-x-hidden overflow-y-scroll bg-white dark:bg-gray-900;
+  @apply w-full h-screen overflow-x-hidden overflow-y-scroll bg-white dark:bg-[#0D0D0D];
 
   .title {
-    @apply h-[67px] px-[20px] flex items-center sticky top-0 left-0 bg-white dark:bg-gray-900 text-black dark:text-white;
+    @apply h-[67px] px-[20px] flex items-center justify-between sticky top-0 left-0 bg-white dark:bg-[#0D0D0D] text-black dark:text-white;
   }
 
   .listIcon {
     @apply mr-[16px];
+
+    svg {
+      path {
+        @apply stroke-black dark:stroke-white;
+      }
+    }
+  }
+  .left {
+    @apply flex items-center;
   }
 }

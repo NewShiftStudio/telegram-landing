@@ -6,7 +6,7 @@
   }
 
   .title {
-    @apply w-full overflow-hidden whitespace-nowrap max-w-[200px] md:max-w-[unset] text-ellipsis;
+    @apply w-full overflow-hidden whitespace-nowrap text-[15px] max-w-[200px] md:max-w-[unset] text-ellipsis dark:text-white font-['Roboto'] font-medium;
   }
 
   .mobileButton {
@@ -30,10 +30,10 @@
   }
 
   .isOnline {
-    @apply text-sm text-[#6a8ceb];
+    @apply text-sm font-light text-[#6a8ceb];
   }
 
   .icon {
-    @apply w-[43px] h-[43px] ml-[23px] bg-gray-500 rounded-full overflow-hidden order-1 md:order-[unset];
+    @apply w-[43px] h-[43px] ml-[23px]  bg-gray-500 rounded-full overflow-hidden order-1 md:order-[unset];
   }
 }

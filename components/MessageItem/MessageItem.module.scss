@@ -2,7 +2,7 @@
   @apply flex flex-col items-stretch;
 
   .messageContent {
-    @apply relative max-w-[458px] min-w-[80px] w-fit bg-white overflow-hidden rounded-[9px];
+    @apply relative max-w-[458px] min-w-[80px] w-fit bg-white overflow-hidden rounded-[9px] dark:bg-[#242424];
 
     filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1)) drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.35));
 
@@ -11,7 +11,7 @@
     }
 
     &.outgoing {
-      @apply bg-[#effedd] rounded-bl-[9px];
+      @apply bg-[#effedd] rounded-bl-[9px] dark:bg-[#6A8CEB];
 
       &.withTail {
         @apply rounded-br-none;
@@ -22,13 +22,19 @@
       }
 
       .date {
-        @apply text-[#62AC55];
+        @apply text-[#62AC55] dark:text-white;
+      }
+
+      .readIcon {
+        path {
+          @apply dark:fill-white;
+        }
       }
     }
   }
 
   .text {
-    @apply text-sm px-[10px] pt-[5px] whitespace-pre-line;
+    @apply text-sm px-[10px] pt-[5px] font-['Roboto'] font-light whitespace-pre-line dark:text-white;
   }
 
   .bottom {
@@ -44,7 +50,7 @@
   }
 
   .date {
-    @apply text-xs text-[#A1AAB3];
+    @apply h-[20px] text-xs text-[#A1AAB3] dark:text-[#FFFFFF];
   }
 
   .tail {

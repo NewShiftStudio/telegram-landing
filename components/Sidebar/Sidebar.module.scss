@@ -7,6 +7,12 @@
 
   .listIcon {
     @apply mr-[16px];
+
+    svg {
+      path {
+        @apply stroke-black dark:stroke-white;
+      }
+    }
   }
   .left {
     @apply flex items-center;

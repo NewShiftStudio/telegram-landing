@@ -1,10 +1,16 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 
-import { chatsList } from '../constants/chats';
-import s from './index.module.scss';
+import { MessagesList } from 'components/MessagesList/MessagesList';
 
-export default function Home({ mainChat }: any) {
+import { Chat } from '../@types/Chat';
+import { chatsList } from '../constants/chats';
+
+type Props = {
+  mainChat: Chat;
+};
+
+export default function Home({ mainChat }: Props) {
   return (
     <>
       <Head>
@@ -12,10 +18,7 @@ export default function Home({ mainChat }: any) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <div className={s.container}>
-        <h1 className={s.title}>{mainChat.title}</h1>
-        <p className={s.description}>This next app user tailwind with module scss</p>
-      </div>
+      <MessagesList messages={mainChat.messages || []} />
     </>
   );
 }

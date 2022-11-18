@@ -22,13 +22,19 @@
       }
 
       .date {
-        @apply text-[#62AC55];
+        @apply text-[#62AC55] dark:text-white;
+      }
+
+      .readIcon {
+        path {
+          @apply dark:fill-white;
+        }
       }
     }
   }
 
   .text {
-    @apply text-sm px-[10px] pt-[5px] whitespace-pre-line dark:text-white;
+    @apply text-sm px-[10px] pt-[5px] font-['Roboto'] font-light whitespace-pre-line dark:text-white;
   }
 
   .bottom {
@@ -44,7 +50,7 @@
   }
 
   .date {
-    @apply text-xs text-[#A1AAB3];
+    @apply h-[20px] text-xs text-[#A1AAB3] dark:text-[#FFFFFF];
   }
 
   .tail {

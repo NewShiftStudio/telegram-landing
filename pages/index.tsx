@@ -3,6 +3,8 @@ import Head from 'next/head';
 
 import { MessagesList } from 'components/MessagesList/MessagesList';
 
+import { useRouterLoading } from 'hooks/useRouterLoading';
+
 import { Chat } from '../@types/Chat';
 import { chatsList } from '../constants/chats';
 
@@ -11,6 +13,8 @@ type Props = {
 };
 
 export default function Home({ mainChat }: Props) {
+  const { isLoading } = useRouterLoading();
+
   return (
     <>
       <Head>
@@ -18,12 +22,12 @@ export default function Home({ mainChat }: Props) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <MessagesList messages={mainChat.messages || []} />
+      <MessagesList isLoading={isLoading} messages={mainChat.messages || []} />
     </>
   );
 }
 
-export const getStaticProps: GetStaticProps = context => {
+export const getStaticProps: GetStaticProps = () => {
   const currentChat = chatsList[0];
 
   return {

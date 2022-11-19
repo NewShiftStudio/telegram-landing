@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 import { ThemeProvider } from 'contexts/themeContext';
 

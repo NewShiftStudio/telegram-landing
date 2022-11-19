@@ -11,4 +11,8 @@
       @apply justify-end;
     }
   }
+
+  .skeletonLoader {
+    @apply max-w-[none] md:max-w-[400px] rounded-[9px] lg:max-w-[458px] min-w-[80px];
+  }
 }

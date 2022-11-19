@@ -5,6 +5,7 @@ import { MessagesList } from 'components/MessagesList/MessagesList';
 
 import { Chat } from '../@types/Chat';
 import { chatsList } from '../constants/chats';
+import { AppLayout } from '../layouts/AppLayout/AppLayout';
 
 type Props = {
   mainChat: Chat;
@@ -18,7 +19,9 @@ export default function Home({ mainChat }: Props) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <MessagesList messages={mainChat.messages || []} />
+      <AppLayout>
+        <MessagesList messages={mainChat.messages || []} />
+      </AppLayout>
     </>
   );
 }

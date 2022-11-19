@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { Chat } from '../@types/Chat';
 import { MessagesList } from '../components/MessagesList/MessagesList';
 import { chatsList } from '../constants/chats';
+import { AppLayout } from '../layouts/AppLayout/AppLayout';
 
 type Props = {
   currentChat: Chat;
@@ -16,7 +17,9 @@ export default function ChatPage({ currentChat }: Props) {
         <title>{currentChat.title} | New Shift — разработка сайтов, сервисов, приложений, чат-ботов в СПб</title>
       </Head>
 
-      <MessagesList messages={currentChat.messages || []} />
+      <AppLayout>
+        <MessagesList messages={currentChat.messages || []} />
+      </AppLayout>
     </>
   );
 }

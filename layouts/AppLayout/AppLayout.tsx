@@ -55,7 +55,7 @@ export const AppLayout = ({ children }: Props) => {
   const handleClickContactUs = useCallback(() => {
     router.push('/');
     setIsSidebarOpened(false);
-  }, []);
+  }, [router]);
 
   const handleSendMessage = (message: string) => {
     console.log(message);
@@ -68,7 +68,7 @@ export const AppLayout = ({ children }: Props) => {
           <div className={s.sidebar}>
             <Sidebar chatsList={chatsList} openedLink={openedChat?.path} onClick={closeSidebar} />
           </div>
-          <div className={s.footer}>
+          <div className={s.mobileFooter}>
             <MobileSidebar onClickContactUs={handleClickContactUs} />
           </div>
         </>

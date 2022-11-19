@@ -4,6 +4,8 @@ import { ReactNode, useCallback, useState } from 'react';
 import cn from 'classnames';
 import { Resizable, ResizableProps } from 're-resizable';
 
+import { MobileSidebar } from 'components/MobileSidebar/MobileSidebar';
+
 import { ChatHeader } from '../../components/Chat/Header/Header';
 import { InputBlock } from '../../components/InputBlock/InputBlock';
 import { Sidebar } from '../../components/Sidebar/Sidebar';
@@ -50,6 +52,11 @@ export const AppLayout = ({ children }: Props) => {
     setIsSidebarOpened(true);
   }, []);
 
+  const handleClickContactUs = useCallback(() => {
+    router.push('/');
+    setIsSidebarOpened(false);
+  }, []);
+
   const handleSendMessage = (message: string) => {
     console.log(message);
   };
@@ -57,9 +64,14 @@ export const AppLayout = ({ children }: Props) => {
   return (
     <div className={cn(s.container, { [s.openedSidebar]: isSidebarOpened })}>
       {isMobile ? (
-        <div className={s.sidebar}>
-          <Sidebar chatsList={chatsList} openedLink={openedChat?.path} onClick={closeSidebar} />
-        </div>
+        <>
+          <div className={s.sidebar}>
+            <Sidebar chatsList={chatsList} openedLink={openedChat?.path} onClick={closeSidebar} />
+          </div>
+          <div className={s.footer}>
+            <MobileSidebar onClickContactUs={handleClickContactUs} />
+          </div>
+        </>
       ) : (
         <Resizable {...resizableProps} className={s.sidebar}>
           <Sidebar chatsList={chatsList} openedLink={openedChat?.path} onClick={closeSidebar} />

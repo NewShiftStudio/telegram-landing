@@ -1,0 +1,21 @@
+.mobileSidebar {
+  @apply h-[76px] w-full flex items-center justify-around bg-[#FEFFFE] dark:bg-[#161616];
+
+  .text {
+    @apply mt-[3px] text-[10px] text-[#545458a6];
+  }
+
+  .counter {
+    @apply absolute right-[-14px] top-[-5px] bg-[#E34941] px-[6px] py-[1px] rounded-full text-[12px] text-[#FEFFFE];
+  }
+
+  .link {
+    @apply relative cursor-pointer flex flex-col items-center;
+
+    &.active {
+      .text {
+        @apply text-[#6A8CEB];
+      }
+    }
+  }
+}

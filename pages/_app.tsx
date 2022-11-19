@@ -9,9 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className='w-screen h-screen flex'>
       <ThemeProvider>
-        <AppLayout>
-          <Component {...pageProps} />
-        </AppLayout>
+        <Component {...pageProps} />
       </ThemeProvider>
     </div>
   );

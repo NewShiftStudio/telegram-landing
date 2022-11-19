@@ -2,11 +2,10 @@ import React from 'react';
 
 import cn from 'classnames';
 
-import { useDarkMode } from 'hooks/useDarkMode';
-
 import { Message as MessageType } from '../../@types/Message';
 import darkBg from '../../assets/images/bg_dark.svg';
 import lightBg from '../../assets/images/bg_light.svg';
+import { useDarkMode } from '../../hooks/useDarkMode';
 import { MessageItem } from '../MessageItem/MessageItem';
 import s from './MessagesList.module.scss';
 

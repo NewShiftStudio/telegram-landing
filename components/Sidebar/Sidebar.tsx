@@ -28,19 +28,21 @@ export const Sidebar = ({ chatsList, openedLink, onClick }: Props) => {
         </div>
         <ThemeSwitch isActive={!!isDark} onChange={toggleIsDark} />
       </div>
-      {chatsList.map(chat => (
-        <Chat
-          key={chat.path}
-          path={chat.path}
-          title={chat.title}
-          image={chat.image}
-          isActive={chat.path === openedLink}
-          titleIcon={chat.titleIcon}
-          date={chat.date}
-          lastMessageText={chat.lastMessageText}
-          onClick={onClick}
-        />
-      ))}
+      <div className={s.chatsList}>
+        {chatsList.map(chat => (
+          <Chat
+            key={chat.path}
+            path={chat.path}
+            title={chat.title}
+            image={chat.image}
+            isActive={chat.path === openedLink}
+            titleIcon={chat.titleIcon}
+            date={chat.date}
+            lastMessageText={chat.lastMessageText}
+            onClick={onClick}
+          />
+        ))}
+      </div>
     </div>
   );
 };

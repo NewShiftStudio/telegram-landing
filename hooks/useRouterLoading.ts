@@ -7,14 +7,17 @@ export function useRouterLoading() {
   const router = useRouter();
 
   useEffect(() => {
-    console.log('rerender');
-    router.events.on('routeChangeStart', () => {
-      setIsLoading(true);
-    });
-    router.events.on('routeChangeComplete', () => {
-      setIsLoading(false);
-    });
-  }, [setIsLoading]);
+    const handleRouterChangeStart = () => setIsLoading(true);
+    const handleRouterChangeComplete = () => setIsLoading(false);
+
+    router.events.on('routeChangeStart', handleRouterChangeStart);
+    router.events.on('routeChangeComplete', handleRouterChangeComplete);
+
+    return () => {
+      router.events.off('routeChangeStart', handleRouterChangeStart);
+      router.events.off('routeChangeComplete', handleRouterChangeComplete);
+    };
+  }, [setIsLoading, router.events]);
 
   return { isLoading };
 }

@@ -4,6 +4,7 @@ import Skeleton from 'react-loading-skeleton';
 import cn from 'classnames';
 
 import { MessageItem } from 'components/MessageItem/MessageItem';
+import { SkeletonMessage } from 'components/UI/SkeletonMessage/SkeletonMessage';
 
 import { Message as MessageType } from 'types/Message';
 
@@ -28,8 +29,8 @@ export const MessagesList = ({ messages, isLoading }: Props) => {
 
       {isLoading && (
         <>
-          <Skeleton className={s.skeletonLoader} count={3} />
-          <Skeleton className={s.skeletonLoader} height={240} />
+          <SkeletonMessage isDark={!!isDark} />
+          <SkeletonMessage isDark={!!isDark} />
         </>
       )}
 

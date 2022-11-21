@@ -1,9 +1,9 @@
-import blog from '../../assets/images/chats/develop/blog.png';
-import businessСard from '../../assets/images/chats/develop/businessСard.png';
-import corporate from '../../assets/images/chats/develop/corporate.png';
-import heading from '../../assets/images/chats/develop/heading.png';
-import landing from '../../assets/images/chats/develop/landing.png';
-import onlineShops from '../../assets/images/chats/develop/onlineShops.png';
+import blog from 'assets/images/chats/develop/blog.png';
+import businessСard from 'assets/images/chats/develop/businessСard.png';
+import corporate from 'assets/images/chats/develop/corporate.png';
+import heading from 'assets/images/chats/develop/heading.png';
+import landing from 'assets/images/chats/develop/landing.png';
+import onlineShops from 'assets/images/chats/develop/onlineShops.png';
 
 export const developMessages = [
   {

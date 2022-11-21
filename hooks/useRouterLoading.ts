@@ -7,6 +7,7 @@ export function useRouterLoading() {
   const router = useRouter();
 
   useEffect(() => {
+    console.log('rerender');
     router.events.on('routeChangeStart', () => {
       setIsLoading(true);
     });

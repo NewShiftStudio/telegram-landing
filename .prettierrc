@@ -17,8 +17,9 @@
     "^(hooks|helpers|packages|utils|constants|errors)",
     "^themes",
 
-    "^(\\.?\\.\\/)+\\w+\\.(?!(s?css|module\\.s?css|styles))",
-    "^(.?./)+",
+    "^(\\.\\.?\\/)+\\w+(/\\w+)*(?!((\\.s?css)|(\\.module\\.s?css)))(\\.\\w+)*$",
+    "styles/\\w+\\.s?css",
+    "^(\\.\\.?\\/)+\\w+(/\\w+)*\\.((s?css)|(module\\.s?css))",
     "^assets"
   ],
   "importOrderSeparation": true,

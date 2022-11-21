@@ -3,10 +3,11 @@ import React from 'react';
 
 import cn from 'classnames';
 
-import contactUsIcon from '../../assets/icons/contactUs.svg';
-import messagesIcon from '../../assets/icons/messages.svg';
-import phoneIcon from '../../assets/icons/phone-light.svg';
 import s from './MobileSidebar.module.scss';
+
+import contactUsIcon from 'assets/icons/contactUs.svg';
+import messagesIcon from 'assets/icons/messages.svg';
+import phoneIcon from 'assets/icons/phone-light.svg';
 
 type Props = {
   phone?: string;

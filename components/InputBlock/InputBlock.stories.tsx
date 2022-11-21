@@ -2,7 +2,8 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { menuLinks } from '../../constants/commonLinks';
+import { menuLinks } from 'constants/commonLinks';
+
 import { InputBlock } from './InputBlock';
 
 export default {

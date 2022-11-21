@@ -1,9 +1,12 @@
 import React from 'react';
 
-import { Chat as ChatType } from '../../@types/Chat';
-import { useDarkMode } from '../../hooks/useDarkMode';
-import { Chat } from '../Chat/Chat';
-import { ThemeSwitch } from '../UI/ThemeSwitch/ThemeSwitch';
+import { Chat } from 'components/Chat/Chat';
+import { ThemeSwitch } from 'components/UI/ThemeSwitch/ThemeSwitch';
+
+import type { Chat as ChatType } from 'types/Chat';
+
+import { useDarkMode } from 'hooks/useDarkMode';
+
 import s from './Sidebar.module.scss';
 
 type Props = {

@@ -3,12 +3,16 @@ import Skeleton from 'react-loading-skeleton';
 
 import cn from 'classnames';
 
-import { Message as MessageType } from '../../@types/Message';
-import darkBg from '../../assets/images/bg_dark.svg';
-import lightBg from '../../assets/images/bg_light.svg';
-import { useDarkMode } from '../../hooks/useDarkMode';
-import { MessageItem } from '../MessageItem/MessageItem';
+import { MessageItem } from 'components/MessageItem/MessageItem';
+
+import { Message as MessageType } from 'types/Message';
+
+import { useDarkMode } from 'hooks/useDarkMode';
+
 import s from './MessagesList.module.scss';
+
+import darkBg from 'assets/images/bg_dark.svg';
+import lightBg from 'assets/images/bg_light.svg';
 
 type Props = {
   messages: MessageType[];

@@ -2,8 +2,9 @@ import React from 'react';
 
 import cn from 'classnames';
 
-import s from './ThemeSwitch.module.scss';
 import { switchIcons } from './switchIcons';
+
+import s from './ThemeSwitch.module.scss';
 
 type Props = {
   isActive?: boolean;

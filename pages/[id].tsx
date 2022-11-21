@@ -1,13 +1,12 @@
 import { GetStaticPaths, GetStaticPathsResult, GetStaticProps } from 'next';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
 
+import { MessagesList } from 'components/MessagesList/MessagesList';
+
+import { Chat } from 'types/Chat';
+
+import { chatsList } from 'constants/chats';
 import { useRouterLoading } from 'hooks/useRouterLoading';
-
-import { Chat } from '../@types/Chat';
-import { MessagesList } from '../components/MessagesList/MessagesList';
-import { chatsList } from '../constants/chats';
 
 type Props = {
   currentChat: Chat;

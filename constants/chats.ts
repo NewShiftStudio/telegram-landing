@@ -1,16 +1,17 @@
-import { Chat } from '../@types/Chat';
-import newShift from '../assets/images/avatar/NewShift.png';
-import apps from '../assets/images/avatar/apps.png';
-import blockchain from '../assets/images/avatar/blockchain.png';
-import bots from '../assets/images/avatar/bots.png';
-import constructors from '../assets/images/avatar/constructors.png';
-import design from '../assets/images/avatar/design.png';
-import integrations from '../assets/images/avatar/integrations.png';
-import promotion from '../assets/images/avatar/promotion.png';
-import pwa from '../assets/images/avatar/pwa.png';
-import web from '../assets/images/avatar/web.png';
-import { appsMessages } from './messages/apps';
-import { developMessages } from './messages/develop';
+import type { Chat } from 'types/Chat';
+
+import { appsMessages, developMessages } from 'constants/messages';
+
+import newShift from 'assets/images/avatar/NewShift.png';
+import apps from 'assets/images/avatar/apps.png';
+import blockchain from 'assets/images/avatar/blockchain.png';
+import bots from 'assets/images/avatar/bots.png';
+import constructors from 'assets/images/avatar/constructors.png';
+import design from 'assets/images/avatar/design.png';
+import integrations from 'assets/images/avatar/integrations.png';
+import promotion from 'assets/images/avatar/promotion.png';
+import pwa from 'assets/images/avatar/pwa.png';
+import web from 'assets/images/avatar/web.png';
 
 export const chatsList: Chat[] = [
   {

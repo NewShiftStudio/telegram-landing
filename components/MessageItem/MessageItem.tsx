@@ -3,12 +3,15 @@ import React, { ReactNode } from 'react';
 
 import cn from 'classnames';
 
-import { MessageLink } from '../../@types/Message';
-import leftMessageTail from '../../assets/icons/leftMessageTail.svg';
-import readIcon from '../../assets/icons/readIcon.svg';
-import rightMessageTail from '../../assets/icons/rightMessageTail.svg';
-import { LinkMessage } from '../LinkMessage/LinkMessage';
+import { LinkMessage } from 'components/LinkMessage/LinkMessage';
+
+import type { MessageLink } from 'types/Message';
+
 import s from './MessageItem.module.scss';
+
+import leftMessageTail from 'assets/icons/leftMessageTail.svg';
+import readIcon from 'assets/icons/readIcon.svg';
+import rightMessageTail from 'assets/icons/rightMessageTail.svg';
 
 type Props = {
   text?: ReactNode;

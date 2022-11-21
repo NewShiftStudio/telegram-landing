@@ -4,14 +4,15 @@ import { ReactNode, useCallback, useState } from 'react';
 import cn from 'classnames';
 import { Resizable, ResizableProps } from 're-resizable';
 
+import { ChatHeader } from 'components/Chat/Header/Header';
+import { InputBlock } from 'components/InputBlock/InputBlock';
 import { MobileSidebar } from 'components/MobileSidebar/MobileSidebar';
+import { Sidebar } from 'components/Sidebar/Sidebar';
 
-import { ChatHeader } from '../../components/Chat/Header/Header';
-import { InputBlock } from '../../components/InputBlock/InputBlock';
-import { Sidebar } from '../../components/Sidebar/Sidebar';
-import { chatsList } from '../../constants/chats';
-import { menuLinks, phoneLink } from '../../constants/commonLinks';
-import useMediaQuery from '../../hooks/useMediaQuery';
+import { chatsList } from 'constants/chats';
+import { menuLinks, phoneLink } from 'constants/commonLinks';
+import useMediaQuery from 'hooks/useMediaQuery';
+
 import s from './AppLayout.module.scss';
 
 type Props = {

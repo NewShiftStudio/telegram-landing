@@ -3,10 +3,10 @@ import Head from 'next/head';
 
 import { MessagesList } from 'components/MessagesList/MessagesList';
 
-import { useRouterLoading } from 'hooks/useRouterLoading';
+import type { Chat } from 'types/Chat';
 
-import { Chat } from '../@types/Chat';
-import { chatsList } from '../constants/chats';
+import { chatsList } from 'constants/chats';
+import { useRouterLoading } from 'hooks/useRouterLoading';
 
 type Props = {
   mainChat: Chat;
@@ -19,7 +19,6 @@ export default function Home({ mainChat }: Props) {
     <>
       <Head>
         <title>New Shift — разработка сайтов, сервисов, приложений, чат-ботов в СПб</title>
-        <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <MessagesList isLoading={isLoading} messages={mainChat.messages || []} />

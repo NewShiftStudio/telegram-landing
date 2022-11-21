@@ -10,8 +10,6 @@ export default function Document() {
           content='NewShift — IT-компания для решения бизнес-задач: создание сайтов, разработка приложений и настройка Яндекс.Директ, а также подключение чат-ботов в телеграм, vk и других платформах.'
         />
 
-        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-
         <meta name='og:site_name' content='New Shift — разработка сайтов, сервисов, приложений, чат-ботов в СПб' />
         <meta name='og:image' content='https://newshift.ru/images/logo.svg' />
         <meta name='og:url' content='https://telegram.devshift.ru' />

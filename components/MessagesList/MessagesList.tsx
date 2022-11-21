@@ -24,6 +24,7 @@ export const MessagesList = ({ messages }: Props) => {
           <MessageItem
             text={message.text}
             withTail={message.isOutgoing}
+            video={message.video}
             image={message.image}
             isOutgoing={message.isOutgoing}
             date={message.createdAt}

@@ -11,19 +11,26 @@ import { LinkMessage } from '../LinkMessage/LinkMessage';
 import s from './MessageItem.module.scss';
 
 type Props = {
-  text?: ReactNode;
+  text?: string;
   image?: string | StaticImageData;
   date?: string;
+  video?: string;
   withTail?: boolean;
   isOutgoing?: boolean;
   link?: MessageLink;
 };
 
-export const MessageItem = ({ text, image, date, isOutgoing, withTail, link }: Props) => (
+export const MessageItem = ({ text, image, date, isOutgoing, withTail, link, video }: Props) => (
   <div className={s.message}>
     <div className={cn(s.messageContent, { [s.outgoing]: isOutgoing, [s.withTail]: withTail })}>
       {image && <Image className={s.image} src={image} width={500} height={400} alt='message image' />}
-      {text && <p className={s.text}>{text}</p>}
+      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+      {video && (
+        <video loop autoPlay muted>
+          <source src={video} />
+        </video>
+      )}
+      {text && <div className={s.content} dangerouslySetInnerHTML={{ __html: text }} />}
       <div className={s.bottom}>
         <p className={s.date}>{date}</p>
         {isOutgoing && (

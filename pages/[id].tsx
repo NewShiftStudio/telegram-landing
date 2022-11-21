@@ -1,16 +1,22 @@
 import { GetStaticPaths, GetStaticPathsResult, GetStaticProps } from 'next';
 import Head from 'next/head';
 
-import { Chat } from '../@types/Chat';
-import { MessagesList } from '../components/MessagesList/MessagesList';
-import { chatsList } from '../constants/chats';
-import { AppLayout } from '../layouts/AppLayout/AppLayout';
+import { AppLayout } from 'layouts/AppLayout/AppLayout';
+
+import { MessagesList } from 'components/MessagesList/MessagesList';
+
+import type { Chat } from 'types/Chat';
+
+import { chatsList } from 'constants/chats';
+import { useRouterLoading } from 'hooks/useRouterLoading';
 
 type Props = {
   currentChat: Chat;
 };
 
 export default function ChatPage({ currentChat }: Props) {
+  const { isLoading } = useRouterLoading();
+
   return (
     <>
       <Head>
@@ -18,7 +24,7 @@ export default function ChatPage({ currentChat }: Props) {
       </Head>
 
       <AppLayout>
-        <MessagesList messages={currentChat.messages || []} />
+        <MessagesList isLoading={isLoading} messages={currentChat.messages || []} />
       </AppLayout>
     </>
   );

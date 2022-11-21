@@ -1,18 +1,5 @@
-import { Chat } from '../@types/Chat';
-import newShift from '../assets/images/avatar/NewShift.png';
-import apps from '../assets/images/avatar/apps.png';
-import blockchain from '../assets/images/avatar/blockchain.png';
-import bots from '../assets/images/avatar/bots.png';
-import constructors from '../assets/images/avatar/constructors.png';
-import design from '../assets/images/avatar/design.png';
-import est from '../assets/images/avatar/est.png';
-import guardBot from '../assets/images/avatar/guard-bot.png';
-import integrations from '../assets/images/avatar/integrations.png';
-import navigatorBot from '../assets/images/avatar/navigator-bot.png';
-import promotion from '../assets/images/avatar/promotion.png';
-import pwa from '../assets/images/avatar/pwa.png';
-import userBot from '../assets/images/avatar/user-bot.png';
-import web from '../assets/images/avatar/web.png';
+import type { Chat } from 'types/Chat';
+
 import { appsMessages } from './messages/apps';
 import { blockchainMessages } from './messages/blockchain';
 import { botsMessages } from './messages/bots';
@@ -22,6 +9,21 @@ import { developMessages } from './messages/develop';
 import { integrationsMessages } from './messages/integrations';
 import { marketingMessages } from './messages/marketing';
 import { pwaMessages } from './messages/pwa';
+
+import newShift from 'assets/images/avatar/NewShift.png';
+import apps from 'assets/images/avatar/apps.png';
+import blockchain from 'assets/images/avatar/blockchain.png';
+import bots from 'assets/images/avatar/bots.png';
+import constructors from 'assets/images/avatar/constructors.png';
+import design from 'assets/images/avatar/design.png';
+import est from 'assets/images/avatar/est.png';
+import guardBot from 'assets/images/avatar/guard-bot.png';
+import integrations from 'assets/images/avatar/integrations.png';
+import navigatorBot from 'assets/images/avatar/navigator-bot.png';
+import promotion from 'assets/images/avatar/promotion.png';
+import pwa from 'assets/images/avatar/pwa.png';
+import userBot from 'assets/images/avatar/user-bot.png';
+import web from 'assets/images/avatar/web.png';
 
 export const chatsList: Chat[] = [
   {

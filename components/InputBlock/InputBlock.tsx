@@ -1,13 +1,15 @@
 import Image from 'next/image';
 import React, { ChangeEvent, useCallback, useState } from 'react';
 
-import attachIcon from '../../assets/icons/attach.svg';
-import menu from '../../assets/icons/menu.svg';
-import menuButton from '../../assets/icons/menuButton.svg';
-import phone from '../../assets/icons/phone.svg';
-import sendMessage from '../../assets/icons/sendMessage.svg';
-import { Textarea } from '../UI/Textarea/Textarea';
+import { Textarea } from 'components/UI/Textarea/Textarea';
+
 import s from './InputBlock.module.scss';
+
+import attachIcon from 'assets/icons/attach.svg';
+import menu from 'assets/icons/menu.svg';
+import menuButton from 'assets/icons/menuButton.svg';
+import phone from 'assets/icons/phone.svg';
+import sendMessage from 'assets/icons/sendMessage.svg';
 
 export type MenuLink = {
   title: string;

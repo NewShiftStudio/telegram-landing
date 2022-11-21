@@ -1,4 +1,4 @@
-import heading from '../../assets/images/chats/apps/heading.png';
+import heading from 'assets/images/chats/apps/heading.png';
 
 export const designMessages = [
   {

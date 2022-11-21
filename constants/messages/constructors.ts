@@ -1,7 +1,7 @@
-import bitrix from '../../assets/images/chats/constructors/bitrix.png';
-import heading from '../../assets/images/chats/constructors/heading.png';
-import tilda from '../../assets/images/chats/constructors/tilda.png';
-import wordpress from '../../assets/images/chats/constructors/wordpress.png';
+import bitrix from 'assets/images/chats/constructors/bitrix.png';
+import heading from 'assets/images/chats/constructors/heading.png';
+import tilda from 'assets/images/chats/constructors/tilda.png';
+import wordpress from 'assets/images/chats/constructors/wordpress.png';
 
 export const constructorsMessages = [
   {

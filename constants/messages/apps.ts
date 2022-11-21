@@ -1,7 +1,7 @@
-import delivery from '../../assets/images/chats/apps/delivery.png';
-import heading from '../../assets/images/chats/apps/heading.png';
-import info from '../../assets/images/chats/apps/info.png';
-import wallet from '../../assets/images/chats/apps/wallet.png';
+import delivery from 'assets/images/chats/apps/delivery.png';
+import heading from 'assets/images/chats/apps/heading.png';
+import info from 'assets/images/chats/apps/info.png';
+import wallet from 'assets/images/chats/apps/wallet.png';
 
 export const appsMessages = [
   {

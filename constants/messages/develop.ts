@@ -1,4 +1,4 @@
-import heading from '../../assets/images/chats/develop/heading.png';
+import heading from 'assets/images/chats/develop/heading.png';
 
 export const developMessages = [
   {

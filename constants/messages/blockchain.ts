@@ -1,4 +1,4 @@
-import heading from '../../assets/images/chats/blockchain/heading.png';
+import heading from 'assets/images/chats/blockchain/heading.png';
 
 export const blockchainMessages = [
   {

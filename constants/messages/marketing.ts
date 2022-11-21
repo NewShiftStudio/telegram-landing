@@ -1,10 +1,10 @@
-import context from '../../assets/images/chats/marketing/context.png';
-import email from '../../assets/images/chats/marketing/email.png';
-import heading from '../../assets/images/chats/marketing/heading.png';
-import mobile from '../../assets/images/chats/marketing/mobile.png';
-import smm from '../../assets/images/chats/marketing/smm.png';
-import strategy from '../../assets/images/chats/marketing/strategy.png';
-import target from '../../assets/images/chats/marketing/target.png';
+import context from 'assets/images/chats/marketing/context.png';
+import email from 'assets/images/chats/marketing/email.png';
+import heading from 'assets/images/chats/marketing/heading.png';
+import mobile from 'assets/images/chats/marketing/mobile.png';
+import smm from 'assets/images/chats/marketing/smm.png';
+import strategy from 'assets/images/chats/marketing/strategy.png';
+import target from 'assets/images/chats/marketing/target.png';
 
 export const marketingMessages = [
   {

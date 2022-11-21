@@ -2,7 +2,8 @@ import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-import { chatTitleIcons } from '../../constants/icons';
+import { chatTitleIcons } from 'constants/icons';
+
 import s from './Chat.module.scss';
 
 type Props = {

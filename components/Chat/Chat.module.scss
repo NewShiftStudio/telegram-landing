@@ -1,6 +1,5 @@
 .chatLink {
-  border-bottom: 1px solid #c9c9c9;
-  @apply px-[20px] py-[10px] flex cursor-pointer bg-white dark:bg-[#0D0D0D];
+  @apply px-[20px] py-[10px] flex cursor-pointer bg-white dark:bg-[#0D0D0D] border-b-[1px] border-[#c9c9c9]  dark:border-[#888888];
 
   .icon {
     @apply w-[50px] h-[50px] mr-[10px] box-border rounded-full border-solid border-[3px] border-[rgb(255,255,255)]  dark:border-[#0D0D0D] overflow-hidden bg-gray-500;

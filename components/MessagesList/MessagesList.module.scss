@@ -11,4 +11,20 @@
       @apply justify-end;
     }
   }
+
+  .skeletonGroup {
+    @apply bg-white pb-[20px] relative overflow-hidden rounded-[9px] dark:bg-[#242424] max-w-[none] md:max-w-[400px] lg:max-w-[458px] min-w-[80px];
+
+    .skeletonImage {
+      @apply inline-block;
+    }
+
+    .skeletonTitle {
+      @apply w-1/2;
+    }
+
+    .skeletonText {
+      @apply px-[10px];
+    }
+  }
 }

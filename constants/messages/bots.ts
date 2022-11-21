@@ -1,7 +1,7 @@
-import heading from '../../assets/images/chats/bots/heading.png';
-import help from '../../assets/images/chats/bots/help.png';
-import info from '../../assets/images/chats/bots/info.png';
-import learn from '../../assets/images/chats/bots/learn.png';
+import heading from 'assets/images/chats/bots/heading.png';
+import help from 'assets/images/chats/bots/help.png';
+import info from 'assets/images/chats/bots/info.png';
+import learn from 'assets/images/chats/bots/learn.png';
 
 export const botsMessages = [
   {

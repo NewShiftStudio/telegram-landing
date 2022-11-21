@@ -2,8 +2,9 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 
-import errorImage from '../assets/images/error.svg';
 import s from './404.module.scss';
+
+import errorImage from 'assets/images/error.svg';
 
 export default function ErrorPage() {
   const router = useRouter();

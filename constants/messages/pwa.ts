@@ -1,5 +1,5 @@
-import heading from '../../assets/images/chats/pwa/heading.png';
-import pwa from '../../assets/images/chats/pwa/pwa.png';
+import heading from 'assets/images/chats/pwa/heading.png';
+import pwa from 'assets/images/chats/pwa/pwa.png';
 
 export const pwaMessages = [
   {

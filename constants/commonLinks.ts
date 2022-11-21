@@ -1,4 +1,4 @@
-import { MenuLink } from '../components/InputBlock/InputBlock';
+import { MenuLink } from 'components/InputBlock/InputBlock';
 
 export const phoneLink = '89999999999';
 export const menuLinks: MenuLink[] = [

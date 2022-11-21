@@ -1,7 +1,7 @@
-import oneC from '../../assets/images/chats/integrations/1c.png';
-import crm from '../../assets/images/chats/integrations/crm.png';
-import heading from '../../assets/images/chats/integrations/heading.png';
-import outside from '../../assets/images/chats/integrations/outside.png';
+import oneC from 'assets/images/chats/integrations/1c.png';
+import crm from 'assets/images/chats/integrations/crm.png';
+import heading from 'assets/images/chats/integrations/heading.png';
+import outside from 'assets/images/chats/integrations/outside.png';
 
 export const integrationsMessages = [
   {

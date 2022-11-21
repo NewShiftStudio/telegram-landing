@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import React from 'react';
 
-import backIconMobile from '../../../assets/icons/back-small.svg';
-import backIcon from '../../../assets/icons/back.svg';
-import phone from '../../../assets/icons/phone.svg';
 import s from './Header.module.scss';
+
+import backIconMobile from 'assets/icons/back-small.svg';
+import backIcon from 'assets/icons/back.svg';
+import phone from 'assets/icons/phone.svg';
 
 type Props = {
   title: string;

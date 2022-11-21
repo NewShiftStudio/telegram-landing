@@ -6,6 +6,7 @@ export type Message = {
   createdAt?: string;
   text?: string;
   image?: string | StaticImageData;
+  video?: string;
   isOutgoing?: boolean;
   link?: MessageLink;
 };

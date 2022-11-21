@@ -5,12 +5,23 @@ import blockchain from '../assets/images/avatar/blockchain.png';
 import bots from '../assets/images/avatar/bots.png';
 import constructors from '../assets/images/avatar/constructors.png';
 import design from '../assets/images/avatar/design.png';
+import est from '../assets/images/avatar/est.png';
+import guardBot from '../assets/images/avatar/guard-bot.png';
 import integrations from '../assets/images/avatar/integrations.png';
+import navigatorBot from '../assets/images/avatar/navigator-bot.png';
 import promotion from '../assets/images/avatar/promotion.png';
 import pwa from '../assets/images/avatar/pwa.png';
+import userBot from '../assets/images/avatar/user-bot.png';
 import web from '../assets/images/avatar/web.png';
 import { appsMessages } from './messages/apps';
+import { blockchainMessages } from './messages/blockchain';
+import { botsMessages } from './messages/bots';
+import { constructorsMessages } from './messages/constructors';
+import { designMessages } from './messages/design';
 import { developMessages } from './messages/develop';
+import { integrationsMessages } from './messages/integrations';
+import { marketingMessages } from './messages/marketing';
+import { pwaMessages } from './messages/pwa';
 
 export const chatsList: Chat[] = [
   {
@@ -18,24 +29,59 @@ export const chatsList: Chat[] = [
     title: 'New Shift',
     lastMessageText: 'main chat content',
     image: newShift,
+    messages: [
+      {
+        id: 1,
+        text: 'Чтобы связаться с нами напишите любое сообщение в этот диалог, как пишите обычно в Telegram. Или нажмите на одну из четырех кнопок. Сайт перенаправит вас в мессенджеры, соцсеть или почту.',
+      },
+      {
+        id: 2,
+        text: 'Слева, в диалогах, наши кейсы. Нажмите, например, на est.1993. Это наш бот с программой лояльности для ресторана.',
+      },
+      {
+        id: 3,
+        text: 'Куда нажимать и куда писать?',
+        isOutgoing: true,
+      },
+      {
+        id: 4,
+        text: 'Что нужно делать, чтобы связаться и посмотреть кейсы?',
+        isOutgoing: true,
+      },
+      {
+        id: 5,
+        text: 'Ага, в видео рассказ о компании и как пользоваться этим сайтом. Понятно.',
+        isOutgoing: true,
+      },
+    ],
+  },
+  {
+    path: 'navigatorBot',
+    title: 'Спортивные Предприниматели',
+    lastMessageText: 'Бот-навигатор. Создан для того, чтобы...',
+    titleIcon: 'bot',
+    image: navigatorBot,
   },
   {
     path: 'guardBot',
-    title: 'Спортивные Предприниматели',
-    lastMessageText: 'Photo',
+    title: 'СПОРТИВНЫЕ ПРЕДПРИНИМАТЕЛИ',
+    lastMessageText: 'Бот-охранник. Запрещает пользователям...',
     titleIcon: 'bot',
+    image: guardBot,
   },
   {
     path: 'questionnaire',
     title: 'Анкета: Спортивные Предприниматели',
-    lastMessageText: '2 Some chat content',
+    lastMessageText: 'Бот-анкета. Даёт пользователям возможность...',
     titleIcon: 'bot',
+    image: userBot,
   },
   {
     path: 'est1993',
     title: 'est. 1993',
-    lastMessageText: '3 Some chat content',
+    lastMessageText: 'Бот с интеграцией ресторанного ПО IIKO...',
     titleIcon: 'bot',
+    image: est,
   },
   {
     path: 'develop',
@@ -54,11 +100,12 @@ export const chatsList: Chat[] = [
     messages: appsMessages,
   },
   {
-    path: 'promotion',
+    path: 'marketing',
     title: 'Продвижение',
-    lastMessageText: '3 Some chat content',
+    lastMessageText: 'Омниканальный digital-маркетинг',
     image: promotion,
     titleIcon: 'megaphone',
+    messages: marketingMessages,
   },
   {
     path: 'design',
@@ -66,6 +113,7 @@ export const chatsList: Chat[] = [
     lastMessageText: 'Закажите уникальный дизайн от New Shift',
     image: design,
     titleIcon: 'peoples',
+    messages: designMessages,
   },
   {
     path: 'blockchain',
@@ -73,6 +121,7 @@ export const chatsList: Chat[] = [
     lastMessageText: 'Реализуем ваш blockchain-проект с технической...',
     image: blockchain,
     titleIcon: 'megaphone',
+    messages: blockchainMessages,
   },
 
   {
@@ -81,6 +130,7 @@ export const chatsList: Chat[] = [
     lastMessageText: 'Интеграция сайта с 1с, Битрикс24, АМОCRM',
     image: integrations,
     titleIcon: 'megaphone',
+    messages: integrationsMessages,
   },
   {
     path: 'constructors',
@@ -88,6 +138,7 @@ export const chatsList: Chat[] = [
     lastMessageText: 'Создание сайтов на конструкторах Tilda, Bitrix24...',
     image: constructors,
     titleIcon: 'bot',
+    messages: constructorsMessages,
   },
   {
     path: 'pwa',
@@ -95,6 +146,7 @@ export const chatsList: Chat[] = [
     lastMessageText: 'Мобильное приложение на базе вашего сайта',
     image: pwa,
     titleIcon: 'bot',
+    messages: pwaMessages,
   },
   {
     path: 'bots',
@@ -102,5 +154,6 @@ export const chatsList: Chat[] = [
     lastMessageText: 'Разработка чат-ботов под любые задачи бизнеса',
     image: bots,
     titleIcon: 'bot',
+    messages: botsMessages,
   },
 ];

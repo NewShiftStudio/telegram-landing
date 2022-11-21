@@ -1,9 +1,11 @@
 import { GetStaticPaths, GetStaticPathsResult, GetStaticProps } from 'next';
 import Head from 'next/head';
 
+import { AppLayout } from 'layouts/AppLayout/AppLayout';
+
 import { MessagesList } from 'components/MessagesList/MessagesList';
 
-import { Chat } from 'types/Chat';
+import type { Chat } from 'types/Chat';
 
 import { chatsList } from 'constants/chats';
 import { useRouterLoading } from 'hooks/useRouterLoading';
@@ -21,7 +23,9 @@ export default function ChatPage({ currentChat }: Props) {
         <title>{currentChat.title} | New Shift — разработка сайтов, сервисов, приложений, чат-ботов в СПб</title>
       </Head>
 
-      <MessagesList isLoading={isLoading} messages={currentChat.messages || []} />
+      <AppLayout>
+        <MessagesList isLoading={isLoading} messages={currentChat.messages || []} />
+      </AppLayout>
     </>
   );
 }

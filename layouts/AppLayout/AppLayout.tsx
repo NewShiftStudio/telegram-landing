@@ -56,7 +56,7 @@ export const AppLayout = ({ children }: Props) => {
   const handleClickContactUs = useCallback(() => {
     router.push('/');
     setIsSidebarOpened(false);
-  }, []);
+  }, [router]);
 
   const handleSendMessage = (message: string) => {
     console.log(message);

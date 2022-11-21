@@ -1,35 +1,30 @@
-import blog from 'assets/images/chats/develop/blog.png';
-import businessСard from 'assets/images/chats/develop/businessСard.png';
-import corporate from 'assets/images/chats/develop/corporate.png';
 import heading from 'assets/images/chats/develop/heading.png';
-import landing from 'assets/images/chats/develop/landing.png';
-import onlineShops from 'assets/images/chats/develop/onlineShops.png';
 
 export const developMessages = [
   {
     id: 1,
-    text: 'Интернет-магазин\n\nот 120 000 руб.\n\nРазработка веб-сайта с навигацией между товарами или услугами, профилем покупателя и возможностью онлайн-оплаты.',
-    image: onlineShops,
+    text: '<b>Интернет-магазин</b>\n\nот 120 000 руб.\n\nРазработка веб-сайта с навигацией между товарами или услугами, профилем покупателя и возможностью онлайн-оплаты.',
+    video: '/video/develop/online-shop.webm',
   },
   {
     id: 2,
-    text: 'Лендинг\n\nот 30 000 руб.\n\nОдностраничный продающий сайт для сбора контактов, продвижения услуг и повышения узнаваемости.',
-    image: landing,
+    text: '<b>Лендинг</b>\n\nот 30 000 руб.\n\nОдностраничный продающий сайт для сбора контактов, продвижения услуг и повышения узнаваемости.',
+    video: '/video/develop/landing.webm',
   },
   {
     id: 3,
-    text: 'Блог\n\nот 30 000 руб.\n\nСоздание веб-сайта, куда вы сможете регулярно добавлять записи с текстом, фото, видео и другим контентом.',
-    image: blog,
+    text: '<b>Блог</b>\n\nот 30 000 руб.\n\nСоздание веб-сайта, куда вы сможете регулярно добавлять записи с текстом, фото, видео и другим контентом.',
+    video: '/video/develop/blog.webm',
   },
   {
     id: 4,
-    text: 'Сайт-визитка\n\nот 20 000 руб.\n\nНебольшой сайт, содержащий информацию о компании, её услугах, кейсах и команде.',
-    image: businessСard,
+    text: '<b>Сайт-визитка</b>\n\nот 20 000 руб.\n\nНебольшой сайт, содержащий информацию о компании, её услугах, кейсах и команде.',
+    video: '/video/develop/business.webm',
   },
   {
     id: 5,
-    text: 'Корпоративный сайт\n\nот 60 000 руб.\n\nРазработка многостраничного сайта для клиентов и сотрудников вашей компании.',
-    image: corporate,
+    text: '<b>Корпоративный сайт</b>\n\nот 60 000 руб.\n\nРазработка многостраничного сайта для клиентов и сотрудников вашей компании.',
+    video: '/video/develop/corporate.webm',
   },
   {
     id: 6,

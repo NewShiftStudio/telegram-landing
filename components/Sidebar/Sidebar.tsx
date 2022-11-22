@@ -12,7 +12,7 @@ import s from './Sidebar.module.scss';
 type Props = {
   chatsList: ChatType[];
   openedLink?: string;
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 export const Sidebar = ({ chatsList, openedLink, onClick }: Props) => {
@@ -22,11 +22,6 @@ export const Sidebar = ({ chatsList, openedLink, onClick }: Props) => {
     <div className={s.sidebar}>
       <div className={s.title}>
         <div className={s.left}>
-          <div className={s.listIcon}>
-            <svg width='16' height='11' viewBox='0 0 16 11' fill='none' xmlns='http://www.w3.org/2000/svg'>
-              <path d='M0.5 5.5H15.5M0.5 0.5H15.5M0.5 10.5H15.5' stroke='black' strokeLinecap='round' />
-            </svg>
-          </div>
           <p>Чаты</p>
         </div>
         <ThemeSwitch isActive={!!isDark} onChange={toggleIsDark} />
@@ -39,8 +34,11 @@ export const Sidebar = ({ chatsList, openedLink, onClick }: Props) => {
             title={chat.title}
             image={chat.image}
             isActive={chat.path === openedLink}
+            isPinned={chat.isPinned}
+            lastMessageIcon={chat.lastMessageIcon}
             titleIcon={chat.titleIcon}
             date={chat.date}
+            isChecked={chat.isChecked}
             lastMessageText={chat.lastMessageText}
             onClick={onClick}
           />

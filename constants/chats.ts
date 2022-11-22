@@ -29,8 +29,10 @@ export const chatsList: Chat[] = [
   {
     path: '/',
     title: 'New Shift',
-    lastMessageText: 'main chat content',
+    lastMessageText: 'Чтобы связаться с нами напишите любое сообщение в этот диалог, как пишите обычно в Telegram.',
     image: newShift,
+    isPinned: true,
+    isChecked: true,
     messages: [
       {
         id: 1,
@@ -91,15 +93,8 @@ export const chatsList: Chat[] = [
     lastMessageText: 'Ведем разработку любой сложности',
     image: web,
     titleIcon: 'bot',
+    lastMessageIcon: 'data',
     messages: developMessages,
-  },
-  {
-    path: 'apps',
-    title: 'Мобильные приложения',
-    lastMessageText: 'Мобильные приложения для любого типа бизнеса',
-    image: apps,
-    titleIcon: 'peoples',
-    messages: appsMessages,
   },
   {
     path: 'marketing',
@@ -107,6 +102,7 @@ export const chatsList: Chat[] = [
     lastMessageText: 'Омниканальный digital-маркетинг',
     image: promotion,
     titleIcon: 'megaphone',
+    lastMessageIcon: 'headphones',
     messages: marketingMessages,
   },
   {
@@ -115,6 +111,7 @@ export const chatsList: Chat[] = [
     lastMessageText: 'Закажите уникальный дизайн от New Shift',
     image: design,
     titleIcon: 'peoples',
+    lastMessageIcon: 'video',
     messages: designMessages,
   },
   {
@@ -123,7 +120,17 @@ export const chatsList: Chat[] = [
     lastMessageText: 'Реализуем ваш blockchain-проект с технической...',
     image: blockchain,
     titleIcon: 'megaphone',
+    lastMessageIcon: 'headphones',
     messages: blockchainMessages,
+  },
+  {
+    path: 'apps',
+    title: 'Мобильные приложения',
+    lastMessageText: 'Мобильные приложения для любого типа бизнеса',
+    image: apps,
+    titleIcon: 'peoples',
+    lastMessageIcon: 'video',
+    messages: appsMessages,
   },
 
   {
@@ -132,6 +139,7 @@ export const chatsList: Chat[] = [
     lastMessageText: 'Интеграция сайта с 1с, Битрикс24, АМОCRM',
     image: integrations,
     titleIcon: 'megaphone',
+    lastMessageIcon: 'document',
     messages: integrationsMessages,
   },
   {
@@ -140,6 +148,7 @@ export const chatsList: Chat[] = [
     lastMessageText: 'Создание сайтов на конструкторах Tilda, Bitrix24...',
     image: constructors,
     titleIcon: 'bot',
+    lastMessageIcon: 'document',
     messages: constructorsMessages,
   },
   {
@@ -148,6 +157,7 @@ export const chatsList: Chat[] = [
     lastMessageText: 'Мобильное приложение на базе вашего сайта',
     image: pwa,
     titleIcon: 'bot',
+    lastMessageIcon: 'document',
     messages: pwaMessages,
   },
   {
@@ -156,6 +166,7 @@ export const chatsList: Chat[] = [
     lastMessageText: 'Разработка чат-ботов под любые задачи бизнеса',
     image: bots,
     titleIcon: 'bot',
+    lastMessageIcon: 'document',
     messages: botsMessages,
   },
 ];

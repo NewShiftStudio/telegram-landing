@@ -1,0 +1,11 @@
+.container {
+  @apply fixed top-0 left-0 w-screen h-full flex;
+
+  .sidebar {
+    @apply h-[calc(100%_-_76px)] fixed top-0 left-0 overflow-hidden w-full;
+  }
+
+  .mobileFooter {
+    @apply fixed w-screen bottom-0 left-0 block md:hidden;
+  }
+}

@@ -2,7 +2,7 @@ import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-import { chatTitleIcons } from 'constants/icons';
+import { chatIcons, chatTitleIcons, lastMessageIcons } from 'constants/icons';
 
 import s from './Chat.module.scss';
 
@@ -11,12 +11,13 @@ type Props = {
   title: string;
   titleIcon?: 'bot' | 'megaphone' | 'peoples';
   lastMessageText: string;
-  lastMessageIcon?: string;
+  lastMessageIcon?: 'data' | 'headphones' | 'video' | 'document';
   image?: StaticImageData;
   date?: string;
   isActive?: boolean;
   isOnline?: boolean;
   isPinned?: boolean;
+  isChecked?: boolean;
   onClick?: () => void;
 };
 
@@ -30,6 +31,7 @@ export function Chat({
   date,
   isActive,
   isOnline,
+  isChecked,
   isPinned,
   onClick,
 }: Props) {
@@ -40,12 +42,17 @@ export function Chat({
         <div className={s.content}>
           <div className={s.heading}>
             <div className={s.title}>
-              {titleIcon && chatTitleIcons[titleIcon]}
+              <div className={s.titleIcon}>{titleIcon && chatTitleIcons[titleIcon]}</div>
               <p className={s.titleText}>{title}</p>
+              <div className={s.checkedIcon}>{isChecked && chatIcons.starburst}</div>
             </div>
             <p className={s.date}>{date}</p>
           </div>
-          <p className={s.lastMessage}>{lastMessageText}</p>
+          <div className={s.lastMessage}>
+            {lastMessageIcon && <div className={s.lastMessageIcon}>{lastMessageIcons[lastMessageIcon]}</div>}
+            <p className={s.lastMessageText}>{lastMessageText}</p>
+            {isPinned && <div className={s.isPinned}>{chatIcons.isPinned}</div>}
+          </div>
         </div>
       </div>
     </Link>

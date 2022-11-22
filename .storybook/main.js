@@ -8,6 +8,8 @@ module.exports = {
     builder: 'webpack5',
   },
   webpackFinal: config => {
+    config.resolve.modules = [path.resolve(__dirname, '..'), 'node_modules'];
+
     config.module.rules.push({
       test: /\.css$/,
       use: [

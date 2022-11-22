@@ -1,11 +1,13 @@
 import type { Chat } from 'types/Chat';
 
 import { appsMessages } from './messages/apps';
+import { biotropikaMessages } from './messages/biotropika';
 import { blockchainMessages } from './messages/blockchain';
 import { botsMessages } from './messages/bots';
 import { constructorsMessages } from './messages/constructors';
 import { designMessages } from './messages/design';
 import { developMessages } from './messages/develop';
+import { estMessages } from './messages/est';
 import { integrationsMessages } from './messages/integrations';
 import { marketingMessages } from './messages/marketing';
 import { pwaMessages } from './messages/pwa';
@@ -58,25 +60,12 @@ export const chatsList: Chat[] = [
     ],
   },
   {
-    path: 'navigatorBot',
+    path: 'biotropika',
     title: 'Спортивные Предприниматели',
     lastMessageText: 'Бот-навигатор. Создан для того, чтобы...',
     titleIcon: 'bot',
     image: navigatorBot,
-  },
-  {
-    path: 'guardBot',
-    title: 'СПОРТИВНЫЕ ПРЕДПРИНИМАТЕЛИ',
-    lastMessageText: 'Бот-охранник. Запрещает пользователям...',
-    titleIcon: 'bot',
-    image: guardBot,
-  },
-  {
-    path: 'questionnaire',
-    title: 'Анкета: Спортивные Предприниматели',
-    lastMessageText: 'Бот-анкета. Даёт пользователям возможность...',
-    titleIcon: 'bot',
-    image: userBot,
+    messages: biotropikaMessages,
   },
   {
     path: 'est1993',
@@ -84,6 +73,7 @@ export const chatsList: Chat[] = [
     lastMessageText: 'Бот с интеграцией ресторанного ПО IIKO...',
     titleIcon: 'bot',
     image: est,
+    messages: estMessages,
   },
   {
     path: 'develop',

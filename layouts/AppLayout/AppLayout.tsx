@@ -39,8 +39,10 @@ export const AppLayout = ({ children }: Props) => {
   const router = useRouter();
   const query = (router.query.id || '/') as string;
 
-  const isMobile = useMediaQuery('(max-width: 768px)');
-  const isResizeble = useMediaQuery('(max-width: 1024px)');
+  const isMobile = useMediaQuery('(max-width: 767px)');
+  const isResizeble = useMediaQuery('(min-width: 1024px)');
+
+  console.log(isResizeble);
 
   const openedChat = chatsList.find(chat => chat.path === query);
 
@@ -60,11 +62,13 @@ export const AppLayout = ({ children }: Props) => {
     <div className={s.container}>
       {!isMobile &&
         (isResizeble ? (
-          <Sidebar chatsList={chatsList} openedLink={openedChat?.path} />
-        ) : (
-          <Resizable {...resizableProps} className={s.sidebar}>
+          <Resizable {...resizableProps}>
             <Sidebar chatsList={chatsList} openedLink={openedChat?.path} />
           </Resizable>
+        ) : (
+          <div className={s.sidebar}>
+            <Sidebar chatsList={chatsList} openedLink={openedChat?.path} />
+          </div>
         ))}
 
       <div className={s.content}>

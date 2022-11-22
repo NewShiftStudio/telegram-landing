@@ -16,7 +16,7 @@ import s from './menu.module.scss';
 
 export default function Menu() {
   const router = useRouter();
-  const isMobile = useMediaQuery('(max-width: 764px)');
+  const isMobile = useMediaQuery('(max-width: 1024px)');
 
   const handleClickContactUs = useCallback(() => {
     router.push('/');
@@ -41,13 +41,3 @@ export default function Menu() {
     </>
   );
 }
-
-export const getStaticProps: GetStaticProps = () => {
-  const currentChat = chatsList[0];
-
-  return {
-    props: {
-      mainChat: currentChat,
-    },
-  };
-};

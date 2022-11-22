@@ -6,6 +6,6 @@
   }
 
   .mobileFooter {
-    @apply fixed w-screen bottom-0 left-0 block md:hidden;
+    @apply fixed w-screen bottom-0 left-0 block lg:hidden;
   }
 }

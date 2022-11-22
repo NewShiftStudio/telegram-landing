@@ -42,9 +42,9 @@ export function Chat({
         <div className={s.content}>
           <div className={s.heading}>
             <div className={s.title}>
-              <div className={s.titleIcon}>{titleIcon && chatTitleIcons[titleIcon]}</div>
+              {titleIcon && <div className={s.titleIcon}>{chatTitleIcons[titleIcon]}</div>}
               <p className={s.titleText}>{title}</p>
-              <div className={s.checkedIcon}>{isChecked && chatIcons.starburst}</div>
+              {isChecked && <div className={s.checkedIcon}>{chatIcons.starburst}</div>}
             </div>
             <p className={s.date}>{date}</p>
           </div>

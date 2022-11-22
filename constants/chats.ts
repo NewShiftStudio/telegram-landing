@@ -29,7 +29,7 @@ export const chatsList: Chat[] = [
   {
     path: '/',
     title: 'New Shift',
-    lastMessageText: 'Чтобы связаться с нами напишите любое сообщение в этот диалог, как пишите обычно в Telegram.',
+    lastMessageText: 'Чтобы связаться с нами напишите любое сообщение в этот диалог, как пишете обычно в Telegram.',
     image: newShift,
     isPinned: true,
     isChecked: true,

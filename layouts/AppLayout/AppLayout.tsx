@@ -39,45 +39,37 @@ export const AppLayout = ({ children }: Props) => {
   const router = useRouter();
   const query = (router.query.id || '/') as string;
 
-  const isMobile = useMediaQuery('(max-width: 1024px)');
+  const isMobile = useMediaQuery('(max-width: 767px)');
+  const isResizeble = useMediaQuery('(min-width: 1024px)');
 
-  const [isSidebarOpened, setIsSidebarOpened] = useState(true);
+  console.log(isResizeble);
 
   const openedChat = chatsList.find(chat => chat.path === query);
 
-  const closeSidebar = useCallback(() => {
-    setIsSidebarOpened(false);
-  }, []);
-
-  const openSidebar = useCallback(() => {
-    setIsSidebarOpened(true);
-  }, []);
-
-  const handleClickContactUs = useCallback(() => {
-    router.push('/');
-    setIsSidebarOpened(false);
-  }, [router]);
+  const onClickBack = () => {
+    if (isMobile) {
+      router.push('/menu');
+    } else {
+      router.push('/');
+    }
+  };
 
   const handleSendMessage = (message: string) => {
     console.log(message);
   };
 
   return (
-    <div className={cn(s.container, { [s.openedSidebar]: isSidebarOpened })}>
-      {isMobile ? (
-        <>
+    <div className={s.container}>
+      {!isMobile &&
+        (isResizeble ? (
+          <Resizable {...resizableProps}>
+            <Sidebar chatsList={chatsList} openedLink={openedChat?.path} />
+          </Resizable>
+        ) : (
           <div className={s.sidebar}>
-            <Sidebar chatsList={chatsList} openedLink={openedChat?.path} onClick={closeSidebar} />
+            <Sidebar chatsList={chatsList} openedLink={openedChat?.path} />
           </div>
-          <div className={s.mobileFooter}>
-            <MobileSidebar onClickContactUs={handleClickContactUs} />
-          </div>
-        </>
-      ) : (
-        <Resizable {...resizableProps} className={s.sidebar}>
-          <Sidebar chatsList={chatsList} openedLink={openedChat?.path} onClick={closeSidebar} />
-        </Resizable>
-      )}
+        ))}
 
       <div className={s.content}>
         <div className={s.header}>
@@ -86,7 +78,7 @@ export const AppLayout = ({ children }: Props) => {
             image={openedChat?.image?.src}
             isOnline={!!query}
             phoneLink={phoneLink}
-            onClickBack={openSidebar}
+            onClickBack={onClickBack}
           />
         </div>
         <div className={s.chat}>{children}</div>

@@ -14,18 +14,24 @@
     @apply flex flex-col items-start;
   }
 
+  .titleIcon {
+    svg {
+      @apply w-[16px] h-[16px] min-w-[16px] mr-[5px];
+      path {
+        @apply bg-black dark:fill-white;
+      }
+    }
+  }
+
+  .checkedIcon {
+    @apply ml-[5px];
+  }
+
   .heading {
     @apply w-full flex items-center justify-between;
 
     .title {
       @apply flex items-center font-['Inter'] text-base font-medium whitespace-nowrap mr-[8px] overflow-hidden text-ellipsis dark:text-white;
-
-      svg {
-        @apply w-[16px] h-[16px] min-w-[16px] mr-[5px];
-        path {
-          @apply bg-black dark:fill-white;
-        }
-      }
 
       .titleText {
         @apply whitespace-nowrap overflow-hidden text-ellipsis;
@@ -38,7 +44,25 @@
   }
 
   .lastMessage {
-    @apply text-[#888888] font-['Inter'] w-full text-sm whitespace-nowrap overflow-hidden text-ellipsis;
+    @apply w-full flex items-center;
+  }
+
+  .lastMessageIcon {
+    svg {
+      @apply w-[16px] h-[16px] mr-[5px];
+    }
+  }
+
+  .isPinned {
+    svg {
+      path {
+        @apply fill-[#888888];
+      }
+    }
+  }
+
+  .lastMessageText {
+    @apply w-[calc(100%_-_21px)] text-[#888888] font-['Inter'] w-full text-sm whitespace-nowrap overflow-hidden text-ellipsis;
   }
 
   &.active {
@@ -52,7 +76,9 @@
       .titleText {
         @apply text-white;
       }
+    }
 
+    .titleIcon {
       svg {
         @apply mr-[5px];
         path {
@@ -61,8 +87,34 @@
       }
     }
 
-    .lastMessage {
+    .checkedIcon {
+      svg {
+        path {
+          @apply fill-white;
+
+          &:last-child {
+            @apply fill-[#6a8ceb];
+          }
+        }
+      }
+    }
+
+    .lastMessageText {
       @apply text-white;
+    }
+
+    .lastMessageIcon {
+      svg {
+        @apply fill-white;
+      }
+    }
+
+    .isPinned {
+      svg {
+        path {
+          @apply fill-white;
+        }
+      }
     }
 
     .date {

@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from 'next/image';
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 import cn from 'classnames';
 
@@ -8,10 +8,6 @@ import { LinkMessage } from 'components/LinkMessage/LinkMessage';
 import type { MessageLink } from 'types/Message';
 
 import s from './MessageItem.module.scss';
-
-import leftMessageTail from 'assets/icons/leftMessageTail.svg';
-import readIcon from 'assets/icons/readIcon.svg';
-import rightMessageTail from 'assets/icons/rightMessageTail.svg';
 
 type Props = {
   text?: string;
@@ -53,8 +49,22 @@ export const MessageItem = ({ text, image, date, isOutgoing, withTail, link, vid
         )}
       </div>
       {withTail && (
-        <div className={cn(s.tail, { [s.right]: isOutgoing })}>
-          <Image src={isOutgoing ? rightMessageTail : leftMessageTail} width={6} height={10} alt='tail' />
+        <div className={s.tail}>
+          {isOutgoing ? (
+            <svg width='6' height='10' viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'>
+              <path
+                d='M0 0C0 3.21429 1.76471 7.67857 5.29412 8.57143C5.29412 8.57143 6 8.57143 6 9.28572C6 10 5.29412 10 5.29412 10L0 10V0Z'
+                fill='white'
+              />
+            </svg>
+          ) : (
+            <svg width='6' height='10' viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'>
+              <path
+                d='M6 0C6 3.21429 4.23529 7.67857 0.705882 8.57143C0.705882 8.57143 0 8.57143 0 9.28572C0 10 0.705882 10 0.705882 10L6 10V0Z'
+                fill='white'
+              />
+            </svg>
+          )}
         </div>
       )}
     </div>

@@ -6,8 +6,13 @@ import navigator from '../../assets/images/chats/biotropika/navigator.png';
 import questionnaire from '../../assets/images/chats/biotropika/questionnaire.png';
 
 export const biotropikaMessages = [
-  { id: 17, text: 'Легко — напишите сообщение прямо тут, и мы с вами свяжемся.' },
-  { id: 16, text: 'Всё понятно, спасибо. Последний вопрос: как заказать разработку своего бота?', isOutgoing: true },
+  { id: 17, text: 'Легко — напишите сообщение прямо тут, и мы с вами свяжемся.', withTail: true },
+  {
+    id: 16,
+    text: 'Всё понятно, спасибо. Последний вопрос: как заказать разработку своего бота?',
+    isOutgoing: true,
+    withTail: true,
+  },
   {
     id: 15,
     text: 'Дополнительно реализовали мини-бота, который генерирует сообщения с кнопкой. Их можно закреплять в чатах, чтобы упрощать навигацию.',
@@ -63,5 +68,6 @@ export const biotropikaMessages = [
     id: 1,
     text: 'А расскажите о клиенте в этом кейсе',
     isOutgoing: true,
+    withTail: true,
   },
 ];

@@ -39,7 +39,7 @@ export const MessagesList = ({ messages, isLoading }: Props) => {
           <div key={message.id} className={cn(s.message, { [s.outgoing]: message.isOutgoing })}>
             <MessageItem
               text={message.text}
-              withTail={message.isOutgoing}
+              withTail={message.withTail}
               video={message.video}
               image={message.image}
               isOutgoing={message.isOutgoing}

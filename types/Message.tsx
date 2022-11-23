@@ -8,6 +8,7 @@ export type Message = {
   video?: string;
   isOutgoing?: boolean;
   link?: MessageLink;
+  withTail?: boolean;
 };
 
 export type MessageLink = {

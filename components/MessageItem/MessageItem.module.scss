@@ -2,14 +2,20 @@
   @apply flex flex-col items-stretch max-w-[none] md:max-w-[400px] lg:max-w-[458px] min-w-[80px];
 
   .messageContent {
-    @apply relative w-full bg-white overflow-hidden rounded-[9px] dark:bg-[#242424];
+    @apply relative w-full bg-white rounded-[9px] dark:bg-[#242424];
 
-    -webkit-appearance: none;
-    -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.35);
-    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
     &.withTail {
       @apply rounded-bl-none;
+
+      .tail {
+        svg {
+          path {
+            @apply fill-white dark:fill-[#242424];
+          }
+        }
+      }
     }
 
     &.outgoing {
@@ -20,7 +26,13 @@
       }
 
       .tail {
-        @apply absolute left-[unset] right-[-6px] bottom-0 w-[6px];
+        @apply absolute  left-[unset] right-[-6px] bottom-0 w-[6px];
+
+        svg {
+          path {
+            @apply fill-[#DEEFFE] dark:fill-[#6A8CEB];
+          }
+        }
       }
 
       .date {

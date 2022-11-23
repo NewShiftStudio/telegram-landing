@@ -21,7 +21,7 @@ type Props = {
 
 const resizableProps: ResizableProps = {
   defaultSize: {
-    width: 350,
+    width: 400,
     height: '100%',
   },
   minWidth: 330,

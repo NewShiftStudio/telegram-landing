@@ -31,12 +31,13 @@ export const chatsList: Chat[] = [
   {
     path: '/',
     title: 'New Shift',
-    lastMessageText: 'main chat content',
+    lastMessageText: 'Чтобы связаться с нами напишите любое сообщение в этот диалог, как пишите обычно в Telegram. ',
     image: newShift,
     messages: [
       {
         id: 1,
         text: 'Чтобы связаться с нами напишите любое сообщение в этот диалог, как пишите обычно в Telegram. Или нажмите на одну из четырех кнопок. Сайт перенаправит вас в мессенджеры, соцсеть или почту.',
+        withTail: true,
       },
       {
         id: 2,
@@ -46,16 +47,19 @@ export const chatsList: Chat[] = [
         id: 3,
         text: 'Куда нажимать и куда писать?',
         isOutgoing: true,
+        withTail: true,
       },
       {
         id: 4,
         text: 'Что нужно делать, чтобы связаться и посмотреть кейсы?',
         isOutgoing: true,
+        withTail: true,
       },
       {
         id: 5,
         text: 'Ага, в видео рассказ о компании и как пользоваться этим сайтом. Понятно.',
         isOutgoing: true,
+        withTail: true,
       },
     ],
   },

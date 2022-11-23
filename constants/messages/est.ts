@@ -5,11 +5,13 @@ export const estMessages = [
   {
     id: 10,
     text: 'Напишите сообщение тут со своим запросом и мы сейчас свяжемся. Все контакты есть в чате New Shift (первая строчка слева в списке чатов).',
+    withTail: true,
   },
   {
     id: 9,
     text: 'Интересно. А как оформить заказ?',
     isOutgoing: true,
+    withTail: true,
   },
   {
     id: 8,
@@ -28,6 +30,7 @@ export const estMessages = [
     id: 5,
     text: 'Как реализовали?',
     isOutgoing: true,
+    withTail: true,
   },
   {
     id: 4,
@@ -37,6 +40,7 @@ export const estMessages = [
     id: 3,
     text: 'Расскажите об этом кейсе',
     isOutgoing: true,
+    withTail: true,
   },
   {
     id: 2,
@@ -47,5 +51,6 @@ export const estMessages = [
     id: 1,
     text: 'Что нужно было сделать?',
     isOutgoing: true,
+    withTail: true,
   },
 ];

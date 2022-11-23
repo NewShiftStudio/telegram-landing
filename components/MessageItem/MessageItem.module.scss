@@ -4,14 +4,16 @@
   .messageContent {
     @apply relative w-full bg-white overflow-hidden rounded-[9px] dark:bg-[#242424];
 
-    filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1)) drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.35));
+    -webkit-appearance: none;
+    -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.35);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.35);
 
     &.withTail {
       @apply rounded-bl-none;
     }
 
     &.outgoing {
-      @apply bg-[#effedd] rounded-bl-[9px] dark:bg-[#6A8CEB];
+      @apply bg-[#DEEFFE] rounded-bl-[9px] dark:bg-[#6A8CEB];
 
       &.withTail {
         @apply rounded-br-none;
@@ -22,7 +24,7 @@
       }
 
       .date {
-        @apply text-[#62AC55] dark:text-white;
+        @apply text-[#6A8CEB] dark:text-white;
       }
 
       .readIcon {

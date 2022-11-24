@@ -1,0 +1,31 @@
+.background {
+  @apply z-10 fixed top-0 left-0 w-screen h-full bg-[#6A8CEB] dark:bg-[#030D29] flex items-center justify-center;
+  .disclaimer {
+    @apply relative w-[calc(100%_-_20px)] md:max-w-[600px] lg:max-w-[650px] xl:max-w-[930px] md:px-[74px] md:py-[48px] px-[18px] py-[34px] lg:px-[44px] lg:py-[64px]  2xl:px-[110px] 2xl:py-[100px] flex flex-col items-center bg-white dark:bg-[#ffffff24] rounded-[20px] md:rounded-[40px] xl:rounded-[65px];
+
+    &:after {
+      content: '';
+      @apply z-[-1] w-[calc(100%_+_20px)] h-[calc(100%_+_20px)] bg-[#ffffff1a] absolute top-[-10px] left-[-10px] rounded-[30px] md:rounded-[50px] xl:rounded-[75px];
+    }
+  }
+
+  .logo {
+    @apply w-[130px] h-[32px] xl:w-[250px] xl:h-[50px];
+  }
+
+  .title {
+    @apply text-center dark:text-white font-light text-lg mt-[12px] mb-[16px] xl:mb-[28px] text-[#222222] font-bold text-[25px] xl:text-[44px];
+  }
+
+  .text {
+    @apply text-[#000000cc] dark:text-white font-light text-center text-[14px] xl:text-xl;
+  }
+
+  .button {
+    @apply relative outline-none z-10 mt-[24px] text-sm lg:text-lg lg:mt-[34px] xl:mt-[40px] px-[34px] py-[12px]  xl:px-[48px] xl:py-[16px] bg-[#6a8ceb] text-white rounded-full;
+    &:after {
+      content: '';
+      @apply z-[-1] w-[calc(100%_+_10px)] h-[calc(100%_+_10px)] bg-[#6a8ceb4d] absolute top-[-5px] left-[-5px] rounded-full;
+    }
+  }
+}

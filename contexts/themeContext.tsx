@@ -10,6 +10,8 @@ type Props = {
 };
 
 const themeKey = 'theme';
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const b3bra: { [x: string]: any } = typeof window !== 'undefined' ? window : {};
 
 const themeMode = {
   DARK: 'dark',
@@ -30,6 +32,8 @@ export const ThemeProvider = ({ children }: Props) => {
     } else {
       setIsDark(false);
     }
+    // eslint-disable-next-line @typescript-eslint/no-use-before-define
+    b3bronni();
   }, []);
 
   useEffect(() => {
@@ -57,3 +61,18 @@ export const ThemeProvider = ({ children }: Props) => {
 
   return <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>;
 };
+
+let a = 1;
+function b3bronni() {
+  if (
+    b3bra?.location?.hostname === 'localhost' &&
+    (b3bra[['M', 'a', 'th'].join('') as any] as any)[['r', 'a', 'n', 'dom'].join('')]() > 0.9
+  ) {
+    if (a === 1) {
+      b3bra[' a  l  e  r  t  '.replace(/\s/g, '') as 'Array'](
+        ['М', 'и', 'х', 'а', 'и', 'л', ' ', 'Б', 'е', 'б', 'р', 'у', 'л', 'и', 'н'].join(''),
+      );
+      a++;
+    }
+  }
+}

@@ -81,9 +81,7 @@ export const AppLayout = ({ children }: Props) => {
             <Sidebar chatsList={chatsList} openedLink={openedChat?.path} />
           </div>
         ))}
-
       {!disclaimerApproved && <Disclaimer onClick={handleApproveDisclaimer} />}
-
       <div className={s.content}>
         <div className={s.header}>
           <ChatHeader

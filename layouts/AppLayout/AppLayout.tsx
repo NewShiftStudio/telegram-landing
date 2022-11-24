@@ -1,12 +1,12 @@
 import { useRouter } from 'next/router';
-import { ReactNode, useCallback, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
+import { useCookies } from 'react-cookie';
 
-import cn from 'classnames';
 import { Resizable, ResizableProps } from 're-resizable';
 
 import { ChatHeader } from 'components/Chat/Header/Header';
+import { Disclaimer } from 'components/Disclaimer/Disclaimer';
 import { InputBlock } from 'components/InputBlock/InputBlock';
-import { MobileSidebar } from 'components/MobileSidebar/MobileSidebar';
 import { Sidebar } from 'components/Sidebar/Sidebar';
 
 import { chatsList } from 'constants/chats';
@@ -39,10 +39,12 @@ export const AppLayout = ({ children }: Props) => {
   const router = useRouter();
   const query = (router.query.id || '/') as string;
 
+  const [cookies, setCookie] = useCookies(['disclaimerApproved']);
+
+  const [disclaimerApproved, setDisclaimerApproved] = useState(true);
+
   const isMobile = useMediaQuery('(max-width: 767px)');
   const isResizeble = useMediaQuery('(min-width: 1024px)');
-
-  console.log(isResizeble);
 
   const openedChat = chatsList.find(chat => chat.path === query);
 
@@ -52,6 +54,15 @@ export const AppLayout = ({ children }: Props) => {
     } else {
       router.push('/');
     }
+  };
+
+  useEffect(() => {
+    setDisclaimerApproved(cookies.disclaimerApproved === 'true');
+  }, [cookies]);
+
+  const handleApproveDisclaimer = () => {
+    setCookie('disclaimerApproved', 'true');
+    setDisclaimerApproved(true);
   };
 
   const handleSendMessage = (message: string) => {
@@ -70,6 +81,8 @@ export const AppLayout = ({ children }: Props) => {
             <Sidebar chatsList={chatsList} openedLink={openedChat?.path} />
           </div>
         ))}
+
+      {!disclaimerApproved && <Disclaimer onClick={handleApproveDisclaimer} />}
 
       <div className={s.content}>
         <div className={s.header}>

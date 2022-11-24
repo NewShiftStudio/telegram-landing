@@ -1,20 +1,20 @@
 .errorPage {
-  @apply py-[45px] md:py-[190px] lg:py-[80px] xl:py-[100px] w-screen min-h-full bg-[#6A8CEB] flex flex-col items-center text-white overflow-y-scroll;
+  @apply py-[45px] md:py-[190px] lg:py-[80px] xl:py-[100px] w-screen min-h-full bg-[#6A8CEB] dark:bg-[#030D29] flex flex-col items-center text-white overflow-y-scroll;
 
   .image {
     @apply w-full;
   }
 
   .title {
-    @apply md:mt-[66px] lg:mt-[20px] leading-none mt-[40px] text-[140px] md:text-[220px] xl:text-[250px] font-bold font-['Inter'];
+    @apply md:mt-[66px] dark:text-white lg:mt-[20px] leading-none mt-[40px] text-[140px] md:text-[220px] xl:text-[250px] font-bold font-['Inter'];
   }
 
   .subtitle {
-    @apply mt-[16px] xl:mt-[10px] text-center md:text-[24px] xl:text-[44px] font-bold font-['Inter'];
+    @apply mt-[16px] dark:text-white xl:mt-[10px] text-center md:text-[24px] xl:text-[44px] font-bold font-['Inter'];
   }
 
   .text {
-    @apply mt-[16px] xl:mt-[24px] text-center text-[14px] xl:text-[20px] font-light font-['Inter'] max-w-[820px];
+    @apply mt-[16px] dark:text-white xl:mt-[24px] text-center text-[14px] xl:text-[20px] font-light font-['Inter'] max-w-[820px];
   }
 
   .button {

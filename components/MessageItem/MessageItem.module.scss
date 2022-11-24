@@ -47,6 +47,10 @@
     }
   }
 
+  .video {
+    @apply w-full rounded-tl-[9px] rounded-tr-[9px];
+  }
+
   .content {
     @apply text-sm mt-1 px-[10px] pt-[5px] font-['Roboto'] font-light whitespace-pre-line dark:text-white;
 
@@ -64,7 +68,7 @@
   }
 
   .image {
-    @apply w-full;
+    @apply w-full rounded-tl-[9px] rounded-tr-[9px];
   }
 
   .readIcon {

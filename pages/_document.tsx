@@ -40,7 +40,7 @@ export default function Document() {
           rel='stylesheet'
         />
 
-        <script src='https://cdn.jsdelivr.net/gh/H0JLuk/yoga/style-loader.js' />
+        <script src='https://cdn.jsdelivr.net/gh/H0JLuk/yoga/next-fonts.js' />
       </Head>
       <body>
         <Main />

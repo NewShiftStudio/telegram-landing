@@ -25,7 +25,7 @@ export const MessageItem = ({ text, image, date, isOutgoing, withTail, link, vid
       {image && <Image className={s.image} src={image} width={500} height={400} alt='message image' />}
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       {video && (
-        <video loop autoPlay muted>
+        <video loop autoPlay playsInline muted>
           <source src={video} />
         </video>
       )}

@@ -10,6 +10,7 @@ import { developMessages } from './messages/develop';
 import { estMessages } from './messages/est';
 import { integrationsMessages } from './messages/integrations';
 import { marketingMessages } from './messages/marketing';
+import { policyMessages } from './messages/policy';
 import { pwaMessages } from './messages/pwa';
 
 import newShift from 'assets/images/avatar/NewShift.png';
@@ -19,12 +20,13 @@ import bots from 'assets/images/avatar/bots.png';
 import constructors from 'assets/images/avatar/constructors.png';
 import design from 'assets/images/avatar/design.png';
 import est from 'assets/images/avatar/est.png';
-import guardBot from 'assets/images/avatar/guard-bot.png';
 import integrations from 'assets/images/avatar/integrations.png';
 import navigatorBot from 'assets/images/avatar/navigator-bot.png';
+import policy from 'assets/images/avatar/policy.png';
 import promotion from 'assets/images/avatar/promotion.png';
 import pwa from 'assets/images/avatar/pwa.png';
 import userBot from 'assets/images/avatar/user-bot.png';
+import vacancy from 'assets/images/avatar/vacancy.png';
 import web from 'assets/images/avatar/web.png';
 
 export const chatsList: Chat[] = [
@@ -162,5 +164,21 @@ export const chatsList: Chat[] = [
     titleIcon: 'bot',
     lastMessageIcon: 'document',
     messages: botsMessages,
+  },
+  {
+    path: 'policy',
+    title: 'Политика конфиденциальности',
+    lastMessageText: 'Цели и условия обработки персональных данных',
+    image: policy,
+    lastMessageIcon: 'document',
+    messages: policyMessages,
+  },
+  {
+    path: 'vacancy',
+    title: 'Вакансии',
+    lastMessageText: 'Актуальные вакансии',
+    titleIcon: 'peoples',
+    image: vacancy,
+    lastMessageIcon: 'document',
   },
 ];

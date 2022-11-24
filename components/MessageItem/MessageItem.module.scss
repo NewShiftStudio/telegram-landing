@@ -48,7 +48,15 @@
   }
 
   .content {
-    @apply text-sm px-[10px] pt-[5px] font-['Roboto'] font-light whitespace-pre-line dark:text-white;
+    @apply text-sm mt-1 px-[10px] pt-[5px] font-['Roboto'] font-light whitespace-pre-line dark:text-white;
+
+    h2 {
+      @apply text-black text-2xl font-bold dark:text-white;
+    }
+
+    h3 {
+      @apply text-black text-lg font-medium dark:text-white;
+    }
   }
 
   .bottom {

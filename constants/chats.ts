@@ -36,26 +36,41 @@ export const chatsList: Chat[] = [
     messages: [
       {
         id: 1,
+        type: 'message',
         text: 'Чтобы связаться с нами напишите любое сообщение в этот диалог, как пишите обычно в Telegram. Или нажмите на одну из четырех кнопок. Сайт перенаправит вас в мессенджеры, соцсеть или почту.',
       },
       {
         id: 2,
+        type: 'message',
         text: 'Слева, в диалогах, наши кейсы. Нажмите, например, на est.1993. Это наш бот с программой лояльности для ресторана.',
       },
       {
         id: 3,
+        type: 'message',
         text: 'Куда нажимать и куда писать?',
         isOutgoing: true,
       },
       {
         id: 4,
+        type: 'message',
         text: 'Что нужно делать, чтобы связаться и посмотреть кейсы?',
         isOutgoing: true,
       },
       {
         id: 5,
+        type: 'message',
         text: 'Ага, в видео рассказ о компании и как пользоваться этим сайтом. Понятно.',
         isOutgoing: true,
+      },
+      {
+        id: 6,
+        type: 'video',
+        video: 'https://static.videezy.com/system/resources/previews/000/009/602/original/4k0212.mp4',
+      },
+      {
+        id: 7,
+        type: 'audio',
+        audio: '/audio2.mp3',
       },
     ],
   },

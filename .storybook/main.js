@@ -52,4 +52,5 @@ module.exports = {
 
     return config;
   },
+  staticDirs: ['../public'],
 };

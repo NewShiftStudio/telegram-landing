@@ -3,10 +3,12 @@ import Skeleton from 'react-loading-skeleton';
 
 import cn from 'classnames';
 
+import { AudioMessage } from 'components/AudioMessage/AudioMessage';
 import { MessageItem } from 'components/MessageItem/MessageItem';
 import { SkeletonMessage } from 'components/UI/SkeletonMessage/SkeletonMessage';
+import { VideoMessage } from 'components/VideoMessage/VideoMessage';
 
-import { Message as MessageType } from 'types/Message';
+import { AudioMessage as AudioMessageType, Message, VideoMessage as VideoMessageType } from 'types/Message';
 
 import { useDarkMode } from 'hooks/useDarkMode';
 
@@ -16,7 +18,7 @@ import darkBg from 'assets/images/bg_dark.svg';
 import lightBg from 'assets/images/bg_light.svg';
 
 type Props = {
-  messages: MessageType[];
+  messages: (Message | AudioMessageType | VideoMessageType)[];
   isLoading?: boolean;
 };
 
@@ -35,19 +37,37 @@ export const MessagesList = ({ messages, isLoading }: Props) => {
       )}
 
       {!isLoading &&
-        messages.map(message => (
-          <div key={message.id} className={cn(s.message, { [s.outgoing]: message.isOutgoing })}>
-            <MessageItem
-              text={message.text}
-              withTail={message.isOutgoing}
-              video={message.video}
-              image={message.image}
-              isOutgoing={message.isOutgoing}
-              date={message.createdAt}
-              link={message.link}
-            />
-          </div>
-        ))}
+        messages.map(message => {
+          if (message.type === 'video') {
+            return (
+              <div key={message.id} className={s.message}>
+                <VideoMessage video={message.video} />
+              </div>
+            );
+          }
+
+          if (message.type === 'audio') {
+            return (
+              <div key={message.id} className={s.message}>
+                <AudioMessage audio={message.audio} />
+              </div>
+            );
+          }
+
+          return (
+            <div key={message.id} className={cn(s.message, { [s.outgoing]: message.isOutgoing })}>
+              <MessageItem
+                text={message.text}
+                withTail={message.isOutgoing}
+                video={message.video}
+                image={message.image}
+                isOutgoing={message.isOutgoing}
+                date={message.createdAt}
+                link={message.link}
+              />
+            </div>
+          );
+        })}
     </div>
   );
 };

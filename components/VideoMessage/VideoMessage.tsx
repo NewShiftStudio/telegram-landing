@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 
-import { formatSeconds } from '../../utils/formatSeconds';
+import { useMediaControls } from 'hooks/useMediaControls';
 
 import s from './VideoMessage.module.scss';
 
@@ -9,53 +9,15 @@ type Props = {
 };
 
 export const VideoMessage = ({ video }: Props) => {
-  const [timing, setTiming] = useState('');
-  const [isPlayed, setIsPlayed] = useState(true);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  const animationRef = useRef<number>(0);
-  useEffect(() => {
-    if (!videoRef?.current) return;
-
-    const draw = () => {
-      if (!videoRef.current) {
-        cancelAnimationFrame(animationRef.current);
-        return;
-      }
-      animationRef.current = requestAnimationFrame(draw);
-      const { duration, currentTime } = videoRef.current;
-      const timeLeft = Math.round(duration - currentTime);
-
-      setTiming(formatSeconds(timeLeft));
-
-      if (timeLeft === 0) {
-        cancelAnimationFrame(animationRef.current);
-      }
-    };
-
-    if (!isPlayed) {
-      cancelAnimationFrame(animationRef.current);
-    } else {
-      animationRef.current = requestAnimationFrame(draw);
-    }
-  }, [videoRef, isPlayed]);
-
-  const togglePlayer = () => {
-    if (!videoRef?.current) return;
-    if (videoRef.current.paused) {
-      videoRef.current.play();
-      setIsPlayed(true);
-    } else {
-      videoRef.current.pause();
-      setIsPlayed(false);
-    }
-  };
+  const { timer, isPlayed, togglePlayer } = useMediaControls(videoRef, { autoplay: true });
 
   return (
     <div className={s.videoMessage}>
       <div className={s.videoContainer}>
         {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-        <video ref={videoRef} className={s.video} autoPlay loop muted>
+        <video ref={videoRef} className={s.video} muted loop preload='metadata'>
           <source src={video} />
         </video>
         <button type='button' onClick={togglePlayer} className={s.controls}>
@@ -72,7 +34,7 @@ export const VideoMessage = ({ video }: Props) => {
           </div>
         </button>
       </div>
-      <div className={s.timing}>{timing}</div>
+      <div className={s.timing}>{timer}</div>
     </div>
   );
 };

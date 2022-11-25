@@ -14,6 +14,7 @@ const AudioMessage = memo(({ audio }: Props) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const { timer, isPlayed, progress, togglePlayer } = useMediaControls(audioRef);
+  console.log(new Date().getSeconds());
 
   return (
     <div className={s.audioMessage}>

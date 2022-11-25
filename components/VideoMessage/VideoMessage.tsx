@@ -8,16 +8,18 @@ type Props = {
   video?: string;
 };
 
+const options = { autoplay: true };
+
 export const VideoMessage = ({ video }: Props) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  const { timer, isPlayed, togglePlayer } = useMediaControls(videoRef, { autoplay: true });
+  const { timer, isPlayed, togglePlayer } = useMediaControls(videoRef, options);
 
   return (
     <div className={s.videoMessage}>
       <div className={s.videoContainer}>
         {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-        <video ref={videoRef} className={s.video} muted loop preload='metadata'>
+        <video ref={videoRef} className={s.video} muted loop>
           <source src={video} />
         </video>
         <button type='button' onClick={togglePlayer} className={s.controls}>

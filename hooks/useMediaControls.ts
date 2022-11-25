@@ -37,9 +37,11 @@ export function useMediaControls(
       animationRef.current = requestAnimationFrame(draw);
       const { duration, currentTime } = mediaRef.current;
       const timeLeft = Math.round(duration - currentTime);
-      setProgress(Math.floor((currentTime / duration) * 100));
+      const newProgress = Math.floor((currentTime / duration) * 100);
+      const formattedTimeLeft = formatSeconds(timeLeft);
 
-      setTimer(formatSeconds(timeLeft));
+      if (newProgress !== progress) setProgress(newProgress);
+      if (formattedTimeLeft !== timer) setTimer(formattedTimeLeft);
 
       if (!mediaRef.current.loop && timeLeft === 0) {
         cancelAnimationFrame(animationRef.current);

@@ -1,8 +1,7 @@
 import React from 'react';
 
+import AudioMessage from '.';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-
-import { AudioMessage } from './AudioMessage';
 
 export default {
   title: 'Message/AudioMessage',

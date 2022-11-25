@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import React, { useRef } from 'react';
+import React, { memo, useRef } from 'react';
 
 import { useMediaControls } from 'hooks/useMediaControls';
 
@@ -11,7 +10,7 @@ type Props = {
   audio?: string;
 };
 
-export const AudioMessage = ({ audio }: Props) => {
+const AudioMessage = memo(({ audio }: Props) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const { timer, isPlayed, progress, togglePlayer } = useMediaControls(audioRef);
@@ -36,7 +35,7 @@ export const AudioMessage = ({ audio }: Props) => {
       <div className={s.content}>
         <div className={s.wawe}>
           {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-          <audio ref={audioRef} className={s.video} preload='metadata'>
+          <audio ref={audioRef} className={s.video}>
             <source src={audio} />
           </audio>
           <div className={s.progress} style={{ WebkitMaskImage: `url(${wawe.src})`, maskImage: `url(${wawe.src})` }}>
@@ -50,4 +49,6 @@ export const AudioMessage = ({ audio }: Props) => {
       </div>
     </div>
   );
-};
+});
+
+export default AudioMessage;

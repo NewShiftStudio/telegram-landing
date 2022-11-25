@@ -1,9 +1,8 @@
 import React from 'react';
-import Skeleton from 'react-loading-skeleton';
 
 import cn from 'classnames';
 
-import { AudioMessage } from 'components/AudioMessage/AudioMessage';
+import AudioMessage from 'components/AudioMessage';
 import { MessageItem } from 'components/MessageItem/MessageItem';
 import { SkeletonMessage } from 'components/UI/SkeletonMessage/SkeletonMessage';
 import { VideoMessage } from 'components/VideoMessage/VideoMessage';

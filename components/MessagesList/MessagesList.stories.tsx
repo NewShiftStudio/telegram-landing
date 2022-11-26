@@ -17,6 +17,7 @@ DefaultState.args = {
   messages: [
     {
       id: 1,
+      type: 'message',
       text: 'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.',
       createdAt: '22:15',
       isOutgoing: false,
@@ -29,12 +30,14 @@ DefaultState.args = {
     },
     {
       id: 2,
+      type: 'message',
       text: 'Lorem Ipsum - это текст-"рыба"',
       createdAt: '22:15',
       isOutgoing: true,
     },
     {
       id: 3,
+      type: 'message',
       text: 'Че как дела?',
       createdAt: '22:15',
       isOutgoing: false,
@@ -45,18 +48,21 @@ DefaultState.args = {
     },
     {
       id: 4,
+      type: 'message',
       text: 'Все по кайфу а у тебя?',
       createdAt: '22:15',
       isOutgoing: true,
     },
     {
       id: 5,
+      type: 'message',
       text: 'Lorem Ipsum - это текст-"рыба"',
       createdAt: '22:15',
       isOutgoing: true,
     },
     {
       id: 6,
+      type: 'message',
       text: 'Че как дела?',
       createdAt: '22:15',
       isOutgoing: false,

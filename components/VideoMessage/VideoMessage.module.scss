@@ -1,0 +1,32 @@
+.videoMessage {
+  @apply relative w-[220px] h-[220px];
+  .videoContainer {
+    cursor: pointer;
+    @apply relative w-full h-full rounded-full overflow-hidden;
+
+    .video {
+      @apply w-full h-full object-cover;
+    }
+
+    .controls {
+      @apply absolute bg-[#00000066] top-0 left-0 w-full h-full flex items-center justify-center opacity-0 transition-opacity;
+    }
+
+    &:hover {
+      .controls {
+        @apply opacity-100;
+      }
+    }
+
+    .controlsIcon {
+      @apply w-[50px] h-[50px] flex;
+      svg {
+        @apply w-full h-full;
+      }
+    }
+  }
+
+  .timing {
+    @apply absolute bottom-0 left-0 p-[5px] rounded-[6px] font-[12px] text-white bg-[#0000004d];
+  }
+}

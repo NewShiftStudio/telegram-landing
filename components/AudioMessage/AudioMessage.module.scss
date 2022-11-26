@@ -1,0 +1,35 @@
+.audioMessage {
+  @apply w-fit px-[12px] py-[8px] rounded-[14px] flex items-center bg-white dark:bg-[#242424];
+  -webkit-appearance: none;
+  -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.35);
+
+  .button {
+    @apply w-[45px] h-[45px] rounded-full bg-[#6A8CEB] flex items-center justify-center;
+  }
+
+  .progress {
+    @apply w-full h-[22px] bg-[#6a8ceb73];
+
+    .progressBar {
+      @apply h-full bg-[#6a8ceb];
+      transition: all 0.2s ease;
+    }
+  }
+
+  .content {
+    @apply ml-[15px] w-[190px] flex flex-col items-center;
+
+    .wawe {
+      @apply w-full;
+    }
+
+    .bottom {
+      @apply w-full items-center justify-between mt-[5px];
+
+      .timer {
+        @apply text-sm text-[#A1AAB3];
+      }
+    }
+  }
+}

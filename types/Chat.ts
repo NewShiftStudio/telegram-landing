@@ -7,11 +7,12 @@ export type Chat = {
   title: string;
   titleIcon?: 'bot' | 'megaphone' | 'peoples';
   lastMessageText: string;
-  lastMessageIcon?: StaticImageData;
+  lastMessageIcon?: 'data' | 'headphones' | 'video' | 'document';
   image?: StaticImageData;
   date?: string;
   isActive?: boolean;
   isOnline?: boolean;
   isPinned?: boolean;
   messages?: ChatMessages;
+  isChecked?: boolean;
 };

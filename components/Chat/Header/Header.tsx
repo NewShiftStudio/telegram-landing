@@ -12,7 +12,7 @@ type Props = {
   image?: string;
   isOnline: boolean;
   phoneLink: string;
-  onClickBack: () => void;
+  onClickBack?: () => void;
 };
 
 export const ChatHeader = ({ image, title, isOnline, phoneLink, onClickBack }: Props) => (

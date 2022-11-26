@@ -14,6 +14,7 @@ export const biotropikaMessages: ChatMessages = [
     type: 'message',
     text: 'Всё понятно, спасибо. Последний вопрос: как заказать разработку своего бота?',
     isOutgoing: true,
+    withTail: true,
   },
   {
     id: 15,
@@ -85,5 +86,6 @@ export const biotropikaMessages: ChatMessages = [
     type: 'message',
     text: 'А расскажите о клиенте в этом кейсе',
     isOutgoing: true,
+    withTail: true,
   },
 ];

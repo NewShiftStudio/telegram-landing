@@ -8,12 +8,14 @@ export const estMessages: ChatMessages = [
     id: 10,
     type: 'message',
     text: 'Напишите сообщение тут со своим запросом и мы сейчас свяжемся. Все контакты есть в чате New Shift (первая строчка слева в списке чатов).',
+    withTail: true,
   },
   {
     id: 9,
     type: 'message',
     text: 'Интересно. А как оформить заказ?',
     isOutgoing: true,
+    withTail: true,
   },
   {
     id: 8,
@@ -36,6 +38,7 @@ export const estMessages: ChatMessages = [
     type: 'message',
     text: 'Как реализовали?',
     isOutgoing: true,
+    withTail: true,
   },
   {
     id: 4,
@@ -47,6 +50,7 @@ export const estMessages: ChatMessages = [
     type: 'message',
     text: 'Расскажите об этом кейсе',
     isOutgoing: true,
+    withTail: true,
   },
   {
     id: 2,
@@ -59,5 +63,6 @@ export const estMessages: ChatMessages = [
     type: 'message',
     text: 'Что нужно было сделать?',
     isOutgoing: true,
+    withTail: true,
   },
 ];

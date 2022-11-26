@@ -13,6 +13,7 @@ export type Message = BaseMessage & {
   video?: string;
   isOutgoing?: boolean;
   link?: MessageLink;
+  withTail?: boolean;
 };
 
 export type VideoMessage = BaseMessage & {

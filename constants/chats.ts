@@ -73,7 +73,7 @@ export const chatsList: Chat[] = [
       {
         id: 6,
         type: 'video',
-        video: 'https://static.videezy.com/system/resources/previews/000/009/602/original/4k0212.mp4',
+        video: '/video/main.mp4',
       },
       {
         id: 7,

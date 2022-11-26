@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { VideoMessage } from './VideoMessage';
+import VideoMessage from './VideoMessage';
 
 export default {
   title: 'Message/VideoMessage',

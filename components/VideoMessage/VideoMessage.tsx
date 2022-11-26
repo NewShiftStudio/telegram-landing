@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { memo, useRef } from 'react';
 
 import { useMediaControls } from 'hooks/useMediaControls';
 
@@ -8,9 +8,9 @@ type Props = {
   video?: string;
 };
 
-const options = { autoplay: true };
+const options = { autoplay: false };
 
-export const VideoMessage = ({ video }: Props) => {
+const VideoMessage = memo(({ video }: Props) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const { timer, isPlayed, togglePlayer } = useMediaControls(videoRef, options);
@@ -19,7 +19,7 @@ export const VideoMessage = ({ video }: Props) => {
     <div className={s.videoMessage}>
       <div className={s.videoContainer}>
         {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-        <video ref={videoRef} className={s.video} muted loop>
+        <video ref={videoRef} className={s.video} muted={options.autoplay} loop>
           <source src={video} />
         </video>
         <button type='button' onClick={togglePlayer} className={s.controls}>
@@ -39,4 +39,6 @@ export const VideoMessage = ({ video }: Props) => {
       <div className={s.timing}>{timer}</div>
     </div>
   );
-};
+});
+
+export default VideoMessage;

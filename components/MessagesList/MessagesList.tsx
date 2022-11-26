@@ -5,7 +5,7 @@ import cn from 'classnames';
 import AudioMessage from 'components/AudioMessage';
 import { MessageItem } from 'components/MessageItem/MessageItem';
 import { SkeletonMessage } from 'components/UI/SkeletonMessage/SkeletonMessage';
-import { VideoMessage } from 'components/VideoMessage/VideoMessage';
+import VideoMessage from 'components/VideoMessage';
 
 import { AudioMessage as AudioMessageType, Message, VideoMessage as VideoMessageType } from 'types/Message';
 

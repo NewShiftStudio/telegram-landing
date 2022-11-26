@@ -59,6 +59,7 @@ export function useMediaControls(
 
     if (options?.autoplay) {
       setIsPlayed(true);
+      mediaRef.current.muted = false;
       mediaRef.current.play();
     }
   }, [mediaRef, options]);

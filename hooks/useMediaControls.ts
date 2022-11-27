@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { RefObject, useEffect, useRef, useState } from 'react';
 
 import { formatSeconds } from 'utils/formatSeconds';
 

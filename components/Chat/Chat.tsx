@@ -38,7 +38,11 @@ export function Chat({
   return (
     <Link href={path} onClick={onClick}>
       <div className={`${s.chatLink} ${isActive ? s.active : ''}`}>
-        <div className={s.icon}>{image && <Image src={image} width={50} height={50} alt='chat image' />}</div>
+        <div className={s.iconWrapper}>
+          <div className={s.icon}>{image && <Image src={image} width={50} height={50} alt='chat image' />}</div>
+          {isOnline && <div className={s.isOnline} />}
+        </div>
+
         <div className={s.content}>
           <div className={s.heading}>
             <div className={s.title}>

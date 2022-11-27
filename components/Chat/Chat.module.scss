@@ -1,8 +1,16 @@
 .chatLink {
   @apply px-[20px] py-[10px] flex cursor-pointer bg-white dark:bg-[#0D0D0D] border-b-[1px] border-[#c9c9c9]  dark:border-[#888888];
 
+  .iconWrapper {
+    @apply relative w-[50px] rounded-full h-[50px] mr-[10px] border-solid border-[3px] border-[#ffffff]  dark:border-[#0D0D0D];
+
+    .isOnline {
+      @apply absolute bottom-0 right-0 w-[11px] h-[11px] rounded-full bg-green-400 border-solid border-[2px] border-[#ffffff]  dark:border-[#0D0D0D];
+    }
+  }
+
   .icon {
-    @apply w-[50px] h-[50px] mr-[10px] box-border rounded-full border-solid border-[3px] border-[rgb(255,255,255)]  dark:border-[#0D0D0D] overflow-hidden bg-gray-500;
+    @apply w-full h-full rounded-full  overflow-hidden bg-gray-500;
 
     img {
       @apply w-full h-full;
@@ -68,8 +76,12 @@
   &.active {
     background: #6a8ceb;
 
-    .icon {
+    .iconWrapper {
       @apply border-solid border-[3px] border-[#ffffff];
+
+      .isOnline {
+        @apply border-[#6a8ceb];
+      }
     }
 
     .title {

@@ -35,6 +35,7 @@ export const Sidebar = ({ chatsList, openedLink, onClick }: Props) => {
             image={chat.image}
             isActive={chat.path === openedLink}
             isPinned={chat.isPinned}
+            isOnline={chat.isOnline}
             lastMessageIcon={chat.lastMessageIcon}
             titleIcon={chat.titleIcon}
             date={chat.date}

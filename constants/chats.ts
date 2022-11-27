@@ -25,7 +25,6 @@ import navigatorBot from 'assets/images/avatar/navigator-bot.png';
 import policy from 'assets/images/avatar/policy.png';
 import promotion from 'assets/images/avatar/promotion.png';
 import pwa from 'assets/images/avatar/pwa.png';
-import userBot from 'assets/images/avatar/user-bot.png';
 import vacancy from 'assets/images/avatar/vacancy.png';
 import web from 'assets/images/avatar/web.png';
 
@@ -37,6 +36,7 @@ export const chatsList: Chat[] = [
     image: newShift,
     isPinned: true,
     isChecked: true,
+    isOnline: true,
     messages: [
       {
         id: 1,

@@ -52,7 +52,7 @@ export function useMediaControls(
     } else {
       animationRef.current = requestAnimationFrame(draw);
     }
-  }, [isPlayed]);
+  }, [mediaRef, timer, progress, isPlayed]);
 
   useEffect(() => {
     if (!mediaRef.current) return;

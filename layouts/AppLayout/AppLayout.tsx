@@ -65,9 +65,7 @@ export const AppLayout = ({ children }: Props) => {
     setDisclaimerApproved(true);
   };
 
-  const handleSendMessage = (message: string) => {
-    console.log(message);
-  };
+  const handleSendMessage = () => undefined;
 
   return (
     <div className={s.container}>

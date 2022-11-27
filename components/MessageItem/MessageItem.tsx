@@ -29,6 +29,7 @@ export const MessageItem = ({ text, image, date, isOutgoing, withTail, link, vid
           <source src={video} />
         </video>
       )}
+      {/* eslint-disable-next-line react/no-danger */}
       {text && <div className={s.content} dangerouslySetInnerHTML={{ __html: text }} />}
       <div className={s.bottom}>
         <p className={s.date}>{date}</p>

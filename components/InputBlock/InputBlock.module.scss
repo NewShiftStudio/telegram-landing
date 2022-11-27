@@ -41,14 +41,8 @@
     @apply font-['Roboto'] mx-[8px] md:mx-[16px] w-[calc(100%_-_42px)] text-sm font-light md:text-base h-[30px] md:h-[36px] rounded-[8px] px-[10px] py-[5px] border-none bg-[#00000008] md:bg-transparent outline-none dark:text-white;
 
     &::placeholder {
-      @apply dark:text-white;
+      @apply dark:text-white visible;
       transition: all 0.4s ease;
-    }
-
-    &:focus {
-      &::placeholder {
-        @apply translate-x-[50px] opacity-0;
-      }
     }
   }
 

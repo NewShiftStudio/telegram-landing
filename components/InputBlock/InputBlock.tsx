@@ -1,7 +1,9 @@
 import Image from 'next/image';
-import React, { ChangeEvent, useCallback, useState } from 'react';
+import React, { ChangeEvent, useCallback, useRef, useState } from 'react';
 
 import { Textarea } from 'components/UI/Textarea/Textarea';
+
+import { useOnClickOutside } from 'hooks/useOnClickOutside';
 
 import s from './InputBlock.module.scss';
 
@@ -25,9 +27,17 @@ type Props = {
 export const InputBlock = ({ menuLinks, phoneLink, onSend }: Props) => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
 
+  const menuRef = useRef<HTMLDivElement | null>(null);
+
   const [formData, setFormData] = useState('');
 
   const canSendMessage = !!formData.trim();
+
+  const handleClickOutsideMenu = () => {
+    setIsMenuOpened(false);
+  };
+
+  useOnClickOutside(menuRef, handleClickOutsideMenu);
 
   const handleSubmit = () => {
     setFormData('');
@@ -76,7 +86,7 @@ export const InputBlock = ({ menuLinks, phoneLink, onSend }: Props) => {
         </div>
       </div>
       {isMenuOpened && (
-        <div className={s.menuLinks}>
+        <div ref={menuRef} className={s.menuLinks}>
           {menuLinks.map(link => (
             <a key={link.href} href={link.href} className={s.menuLink}>
               {link.title}

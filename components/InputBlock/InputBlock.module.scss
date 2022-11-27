@@ -3,7 +3,7 @@
 
   .right,
   .left {
-    @apply flex items-center min-h-[30px] md:h-[36px];
+    @apply flex items-center min-h-[30px] md:min-h-[36px];
   }
 
   .left {

@@ -16,10 +16,10 @@
   }
 
   .chat {
-    @apply h-full w-full pt-[67px] pb-[30px] md:pb-[54px] overflow-x-hidden overflow-y-scroll flex justify-end;
+    @apply h-full w-full pt-[67px] overflow-x-hidden overflow-y-scroll flex justify-end;
   }
 
   .footer {
-    @apply absolute w-full bg-white right-0 bottom-0 dark:bg-[#0D0D0D];
+    @apply w-full bg-white right-0 bottom-0 dark:bg-[#0D0D0D];
   }
 }

@@ -37,4 +37,4 @@ next-env.d.ts
 
 /public/sw*
 /public/workbox*
-/public/sw.*
+/public/sw.js

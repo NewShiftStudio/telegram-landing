@@ -82,4 +82,8 @@
   .tail {
     @apply absolute left-[-6px] bottom-0 w-[6px];
   }
+
+  .filesList {
+    @apply mt-[6px] flex flex-col items-center gap-[6px];
+  }
 }

@@ -18,4 +18,20 @@ DefaultState.args = {
   date: '22:15',
   image:
     'https://images.unsplash.com/photo-1667529807746-41be513da45c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+  files: [
+    {
+      id: '1',
+      createdAt: '12:00',
+      name: 'Название файла',
+      size: '1.5 Мб',
+      type: 'pdf',
+    },
+    {
+      id: '2',
+      createdAt: '12:00',
+      name: 'Название файла',
+      size: '1.5 Мб',
+      type: 'pdf',
+    },
+  ],
 };

@@ -1,5 +1,7 @@
 import { StaticImageData } from 'next/image';
 
+import { File } from './File';
+
 export type BaseMessage = {
   id: number;
   createdAt?: string;
@@ -14,6 +16,7 @@ export type Message = BaseMessage & {
   isOutgoing?: boolean;
   link?: MessageLink;
   withTail?: boolean;
+  files?: File[];
 };
 
 export type VideoMessage = BaseMessage & {

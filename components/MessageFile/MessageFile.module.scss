@@ -1,0 +1,23 @@
+.messageFile {
+  @apply w-full px-[10px] flex items-center;
+
+  .icon {
+    @apply w-[80px] h-[80px] bg-[#DCE5FF] flex items-center justify-center rounded-[3px];
+
+    .circle {
+      @apply w-[42px] h-[42px] rounded-full bg-[#6A8CEB] flex items-center justify-center;
+    }
+  }
+
+  .info {
+    @apply ml-[10px];
+  }
+
+  .name {
+    @apply text-base text-[#6A8CEB] font-medium;
+  }
+
+  .size {
+    @apply uppercase text-base font-semibold text-[#a1aab3];
+  }
+}

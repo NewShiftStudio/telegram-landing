@@ -4,7 +4,9 @@ import React from 'react';
 import cn from 'classnames';
 
 import { LinkMessage } from 'components/LinkMessage/LinkMessage';
+import { MessageFile } from 'components/MessageFile/MessageFile';
 
+import { File } from 'types/File';
 import type { MessageLink } from 'types/Message';
 
 import s from './MessageItem.module.scss';
@@ -17,9 +19,10 @@ type Props = {
   withTail?: boolean;
   isOutgoing?: boolean;
   link?: MessageLink;
+  files?: File[];
 };
 
-export const MessageItem = ({ text, image, date, isOutgoing, withTail, link, video }: Props) => (
+export const MessageItem = ({ text, image, date, isOutgoing, withTail, link, video, files }: Props) => (
   <div className={s.message}>
     <div className={cn(s.messageContent, { [s.outgoing]: isOutgoing, [s.withTail]: withTail })}>
       {image && <Image className={s.image} src={image} width={500} height={400} alt='message image' />}
@@ -31,6 +34,13 @@ export const MessageItem = ({ text, image, date, isOutgoing, withTail, link, vid
       )}
       {/* eslint-disable-next-line react/no-danger */}
       {text && <div className={s.content} dangerouslySetInnerHTML={{ __html: text }} />}
+      {files && (
+        <div className={s.filesList}>
+          {files.map(file => (
+            <MessageFile key={file.id} name={file.name} type={file.type} size={file.size} />
+          ))}
+        </div>
+      )}
       <div className={s.bottom}>
         <p className={s.date}>{date}</p>
         {isOutgoing && (

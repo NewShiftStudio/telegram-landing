@@ -1,4 +1,9 @@
-module.exports = {
+/* eslint-disable @typescript-eslint/no-var-requires */
+const withPWA = require('next-pwa')({
+  dest: 'public',
+});
+
+module.exports = withPWA({
   webpack: config => {
     const rules = config.module.rules.find(r => !!r.oneOf);
 
@@ -29,4 +34,4 @@ module.exports = {
   },
   reactStrictMode: true,
   swcMinify: true,
-};
+});

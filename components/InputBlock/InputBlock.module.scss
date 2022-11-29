@@ -17,7 +17,7 @@
   .menuButton {
     @apply flex mt-[4px] md:mt-0 w-[21px] z-20 border-[1px] border-gray-500 md:border-none outline-none h-[21px] md:h-[unset] md:w-[75px] relative items-center box-content bg-white dark:bg-[#0D0D0D] md:bg-[#6A8CEB] md:dark:bg-[#6A8CEB] md:px-[8px] md:py-[6px] text-white rounded-[6px]  md:rounded-full;
     &:after {
-      content: '';
+      content: "";
       @apply hidden md:block absolute top-[-5px] left-[-5px] z-[1] rounded-full;
       width: calc(100% + 10px);
       height: calc(100% + 10px);
@@ -70,5 +70,9 @@
 
   .menuLink {
     @apply h-[48px] lg:h-[147px] font-['Roboto'] flex justify-center items-center rounded-[6px] text-base bg-[#00000008] dark:bg-[#242424] dark:text-white mt-[4px] lg:mt-[16px]  first:mt-0;
+  }
+
+  .filesList {
+    @apply py-[16px] w-full flex flex-col items-center;
   }
 }

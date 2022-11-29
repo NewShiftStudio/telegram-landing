@@ -1,0 +1,23 @@
+.file {
+    @apply py-[6px] relative w-full flex items-center;
+
+    .icon {
+        @apply w-[45px] h-[45px] rounded-full bg-[#6A8CEB];
+    }
+
+    .info {
+        @apply ml-[16px] flex flex-col;
+    }
+
+    .name {
+        @apply text-base text-[#6A8CEB];
+    }
+
+    .size {
+        @apply text-sm text-[#A1AAB3];
+    }
+
+    .delete {
+        @apply w-[24px] h-[24px] absolute right-0 top-0;
+    }
+}

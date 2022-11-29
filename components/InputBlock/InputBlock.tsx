@@ -3,6 +3,12 @@ import React, { ChangeEvent, useCallback, useState } from 'react';
 
 import { Textarea } from 'components/UI/Textarea/Textarea';
 
+import { checkFileSize, getFileMbSize, getFileType, getFilesArray } from 'utils/filesHelper';
+
+import { MAX_FILE_SIZE } from 'constants/file';
+
+import { LoadedFile } from './File/LoadedFile';
+
 import s from './InputBlock.module.scss';
 
 import attachIcon from 'assets/icons/attach.svg';
@@ -16,26 +22,61 @@ export type MenuLink = {
   href: string;
 };
 
+type FormData = {
+  message: string;
+  files: File[];
+};
+
 type Props = {
   menuLinks: MenuLink[];
   phoneLink: string;
-  onSend: (text: string) => void;
+  onSend: (data: FormData) => void;
 };
 
 export const InputBlock = ({ menuLinks, phoneLink, onSend }: Props) => {
+  const [fileErrors, setFileErrors] = useState<string>('');
   const [isMenuOpened, setIsMenuOpened] = useState(false);
+  const [files, setFiles] = useState<File[]>([]);
+  const [message, setMessage] = useState('');
 
-  const [formData, setFormData] = useState('');
-
-  const canSendMessage = !!formData.trim();
+  const canSendMessage = !!message.trim();
 
   const handleSubmit = () => {
-    setFormData('');
-    onSend(formData);
+    setMessage('');
+    setFiles([]);
+    onSend({
+      message,
+      files,
+    });
+  };
+
+  const handleChangeFiles = (e: ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files) return;
+
+    const filesList = e.target.files;
+    const filesArray = getFilesArray(filesList);
+
+    for (let i = 0; i < filesArray.length; i++) {
+      const result = checkFileSize(filesArray[i], MAX_FILE_SIZE);
+      if (result.status === 'error') {
+        setFileErrors(result.message || 'Произошла ошибка');
+        return;
+      }
+    }
+
+    setFiles(prevFiles => [...prevFiles, ...filesArray]);
+  };
+
+  const handleDeleteFile = (index: number) => {
+    setFiles(prevState => {
+      const newArr = [...prevState];
+      newArr.splice(index, 1);
+      return newArr;
+    });
   };
 
   const handleChangeInput = useCallback((e: ChangeEvent<HTMLTextAreaElement>) => {
-    setFormData(e.target.value);
+    setMessage(e.target.value);
   }, []);
   const toggleMenu = () => {
     setIsMenuOpened(prevState => !prevState);
@@ -51,7 +92,7 @@ export const InputBlock = ({ menuLinks, phoneLink, onSend }: Props) => {
             <Image className={s.menuIconMobile} src={menuButton} width={21} height={21} alt='menuButton' />
           </button>
           <Textarea
-            value={formData}
+            value={message}
             className={s.textInput}
             onChange={handleChangeInput}
             placeholder='Опишите свой проект'
@@ -61,7 +102,14 @@ export const InputBlock = ({ menuLinks, phoneLink, onSend }: Props) => {
 
         <div className={s.right}>
           <label className={s.attachFile} htmlFor='attach-file'>
-            <input className={s.fileInput} type='file' name='file' id='attach-file' />
+            <input
+              multiple
+              className={s.fileInput}
+              onChange={handleChangeFiles}
+              type='file'
+              name='file'
+              id='attach-file'
+            />
             <Image src={attachIcon} width={27} height={27} alt='attach file' />
           </label>
           {canSendMessage ? (
@@ -75,6 +123,22 @@ export const InputBlock = ({ menuLinks, phoneLink, onSend }: Props) => {
           )}
         </div>
       </div>
+      {!!fileErrors && <p>{fileErrors}</p>}
+      {!!files.length && (
+        <div className={s.filesList}>
+          {files.map((file, i) => (
+            <LoadedFile
+              // eslint-disable-next-line react/no-array-index-key
+              key={i}
+              name={file.name}
+              size={getFileMbSize(file)}
+              type={getFileType(file)}
+              onDelete={() => handleDeleteFile(i)}
+            />
+          ))}
+        </div>
+      )}
+
       {isMenuOpened && (
         <div className={s.menuLinks}>
           {menuLinks.map(link => (

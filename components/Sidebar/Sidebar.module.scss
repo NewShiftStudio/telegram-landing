@@ -21,4 +21,8 @@
   .chatsList {
     @apply overflow-x-hidden overflow-y-scroll h-[calc(100%_-_67px)];
   }
+
+  .empty {
+    @apply mt-[10px];
+  }
 }

@@ -1,0 +1,20 @@
+.form {
+  @apply max-w-[450px] w-[calc(100%_-_20px)] p-10 flex flex-col items-center shadow-md rounded-md;
+
+  .title {
+    @apply w-full pb-[5px] text-2xl text-center;
+    border-bottom: 1px solid #c3c3c3;
+  }
+
+  .inputs {
+    @apply w-full mt-[15px] flex flex-col items-center gap-2;
+  }
+
+  .input {
+    @apply w-full h-[36px] text-sm px-[8px] border-[1px] border-solid border-[#c3c3c3] outline-none rounded-sm;
+  }
+
+  .button {
+    @apply mt-[15px] w-full h-[36px] rounded-sm bg-blue-400 text-white;
+  }
+}

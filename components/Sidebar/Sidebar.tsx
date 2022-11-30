@@ -27,6 +27,7 @@ export const Sidebar = ({ chatsList, openedLink, onClick }: Props) => {
         <ThemeSwitch isActive={!!isDark} onChange={toggleIsDark} />
       </div>
       <div className={s.chatsList}>
+        {chatsList.length === 0 && <p className={s.empty}>Нет актуальных чатов</p>}
         {chatsList.map(chat => (
           <Chat
             key={chat.path}

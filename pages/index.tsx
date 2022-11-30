@@ -23,7 +23,7 @@ export default function Home({ mainChat }: Props) {
         <title>New Shift — разработка сайтов, сервисов, приложений, чат-ботов в СПб</title>
       </Head>
 
-      <AppLayout>
+      <AppLayout chatsList={chatsList}>
         <MessagesList isLoading={isLoading} messages={mainChat.messages || []} />
       </AppLayout>
     </>

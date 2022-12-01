@@ -5,7 +5,7 @@ import cn from 'classnames';
 
 import { LinkMessage } from 'components/LinkMessage/LinkMessage';
 
-import type { MessageLink } from 'types/Message';
+import type { MessageLink } from 'types/entities/Message';
 
 import s from './MessageItem.module.scss';
 

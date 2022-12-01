@@ -1,4 +1,4 @@
-import type { Chat } from 'types/Chat';
+import type { Chat } from 'types/entities/Chat';
 
 import { appsMessages } from './messages/apps';
 import { biotropikaMessages } from './messages/biotropika';

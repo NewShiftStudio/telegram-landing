@@ -18,7 +18,7 @@ export type MenuLink = {
 
 type Props = {
   menuLinks: MenuLink[];
-  phoneLink: string;
+  phoneLink?: string;
   onSend: (text: string) => void;
 };
 

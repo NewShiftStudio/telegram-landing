@@ -1,4 +1,4 @@
-import { ChatMessages } from 'types/Message';
+import { ChatMessages } from 'types/entities/Message';
 
 import bitrix from 'assets/images/chats/constructors/bitrix.png';
 import heading from 'assets/images/chats/constructors/heading.png';

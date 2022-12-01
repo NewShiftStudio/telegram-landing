@@ -23,6 +23,6 @@
   }
 
   .empty {
-    @apply mt-[10px];
+    @apply mt-[10px] text-black dark:text-white;
   }
 }

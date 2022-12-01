@@ -7,7 +7,7 @@ import { MessageItem } from 'components/MessageItem/MessageItem';
 import { SkeletonMessage } from 'components/UI/SkeletonMessage/SkeletonMessage';
 import VideoMessage from 'components/VideoMessage';
 
-import { AudioMessage as AudioMessageType, Message, VideoMessage as VideoMessageType } from 'types/Message';
+import { AudioMessage as AudioMessageType, Message, VideoMessage as VideoMessageType } from 'types/entities/Message';
 
 import { useDarkMode } from 'hooks/useDarkMode';
 

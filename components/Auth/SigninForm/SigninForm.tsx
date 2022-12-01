@@ -27,6 +27,8 @@ export default function SigninForm({ onSubmit }: Props) {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log(formData);
+
     onSubmit(formData);
   };
 
@@ -51,7 +53,7 @@ export default function SigninForm({ onSubmit }: Props) {
           placeholder='Пароль'
         />
       </div>
-      <button className={s.button} type='button'>
+      <button className={s.button} type='submit'>
         Войти
       </button>
     </form>

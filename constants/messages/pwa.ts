@@ -1,4 +1,4 @@
-import { ChatMessages } from 'types/Message';
+import { ChatMessages } from 'types/entities/Message';
 
 import heading from 'assets/images/chats/pwa/heading.png';
 import pwa from 'assets/images/chats/pwa/pwa.png';

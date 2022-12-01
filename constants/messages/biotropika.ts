@@ -1,4 +1,4 @@
-import { ChatMessages } from 'types/Message';
+import { ChatMessages } from 'types/entities/Message';
 
 import admin from 'assets/images/chats/biotropika/admin.png';
 import guard from 'assets/images/chats/biotropika/guard.png';

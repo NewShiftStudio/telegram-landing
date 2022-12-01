@@ -3,7 +3,7 @@ import React from 'react';
 import { Chat } from 'components/Chat/Chat';
 import { ThemeSwitch } from 'components/UI/ThemeSwitch/ThemeSwitch';
 
-import type { Chat as ChatType } from 'types/Chat';
+import type { Chat as ChatType } from 'types/entities/Chat';
 
 import { useDarkMode } from 'hooks/useDarkMode';
 

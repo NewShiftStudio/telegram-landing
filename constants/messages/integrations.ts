@@ -1,4 +1,4 @@
-import { ChatMessages } from 'types/Message';
+import { ChatMessages } from 'types/entities/Message';
 
 import oneC from 'assets/images/chats/integrations/1c.png';
 import crm from 'assets/images/chats/integrations/crm.png';

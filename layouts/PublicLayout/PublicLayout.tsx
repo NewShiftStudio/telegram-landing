@@ -9,12 +9,12 @@ import { Disclaimer } from 'components/Disclaimer/Disclaimer';
 import { InputBlock } from 'components/InputBlock/InputBlock';
 import { Sidebar } from 'components/Sidebar/Sidebar';
 
-import { Chat } from 'types/Chat';
+import { Chat } from 'types/entities/Chat';
 
 import { menuLinks, phoneLink } from 'constants/commonLinks';
 import useMediaQuery from 'hooks/useMediaQuery';
 
-import s from './AppLayout.module.scss';
+import s from './PublicLayout.module.scss';
 
 type Props = {
   chatsList: Chat[];
@@ -37,7 +37,7 @@ const resizableProps: ResizableProps = {
   },
 };
 
-export const AppLayout = ({ children, chatsList }: Props) => {
+export const PublicLayout = ({ children, chatsList }: Props) => {
   const router = useRouter();
   const query = (router.query.id || '/') as string;
 

@@ -1,19 +1,39 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { ChangeEvent, FormEvent, useState } from 'react';
+import { useMutation } from 'react-query';
+
+import { SignInDto, authApi } from 'https/auth';
+
+import { useAuth } from 'hooks/useAuth';
 
 import s from './auth.module.scss';
 
 export default function Admin() {
+  const router = useRouter();
   const [formData, setFormData] = useState({});
+
+  const { isAuth, loading, signin } = useAuth();
 
   const handleChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prevState => ({ ...prevState, [name]: value }));
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    signin(formData as SignInDto);
   };
+
+  if (loading) {
+    return null;
+  }
+
+  if (!loading && isAuth) {
+    router.push('/admin');
+    return null;
+  }
 
   return (
     <>

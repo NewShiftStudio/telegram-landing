@@ -56,13 +56,12 @@ export const InputBlock = ({ menuLinks, phoneLink, onSend }: Props) => {
     const filesList = e.target.files;
     const filesArray = getFilesArray(filesList);
 
-    for (let i = 0; i < filesArray.length; i++) {
-      const result = checkFileSize(filesArray[i], MAX_FILE_SIZE);
+    filesArray.forEach(file => {
+      const result = checkFileSize(file, MAX_FILE_SIZE);
       if (result.status === 'error') {
         setFileErrors(result.message || 'Произошла ошибка');
-        return;
       }
-    }
+    });
 
     setFiles(prevFiles => [...prevFiles, ...filesArray]);
   };
@@ -128,8 +127,7 @@ export const InputBlock = ({ menuLinks, phoneLink, onSend }: Props) => {
         <div className={s.filesList}>
           {files.map((file, i) => (
             <LoadedFile
-              // eslint-disable-next-line react/no-array-index-key
-              key={i}
+              key={Math.random()}
               name={file.name}
               size={getFileMbSize(file)}
               type={getFileType(file)}

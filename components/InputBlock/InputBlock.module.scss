@@ -71,4 +71,8 @@
   .menuLink {
     @apply h-[48px] lg:h-[147px] font-['Roboto'] flex justify-center items-center rounded-[6px] text-base bg-[#00000008] dark:bg-[#242424] dark:text-white mt-[4px] lg:mt-[16px]  first:mt-0;
   }
+
+  .filesList {
+    @apply py-[16px] w-full flex flex-col items-center;
+  }
 }

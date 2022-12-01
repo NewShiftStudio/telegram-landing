@@ -1,0 +1,21 @@
+.container {
+  @apply w-full h-full flex items-center justify-center;
+
+  .form {
+    @apply mt-1 w-[400px] px-4 py-2;
+  }
+
+  .input {
+    @apply mt-2 px-2 w-full h-[40px] rounded-sm;
+
+    border: 1px solid #c3c3c3;
+  }
+
+  .title {
+    @apply text-2xl;
+  }
+
+  .button {
+    @apply mt-2 w-full h-[40px] text-white bg-blue-500 rounded-sm;
+  }
+}

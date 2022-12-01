@@ -1,0 +1,25 @@
+.container {
+  @apply fixed top-0 left-0 w-screen h-full flex;
+
+  .sidebar {
+    @apply h-[calc(100%_-_76px)] md:h-full md:w-[330px] fixed md:static top-0 left-0 -translate-x-full overflow-hidden md:translate-x-0;
+  }
+
+  .content {
+    transition: all 0.2s ease;
+
+    @apply relative h-full w-full md:w-[calc(100%_-_330px)] flex flex-col items-center justify-between translate-x-0;
+  }
+
+  .header {
+    @apply absolute top-0 right-0 w-full bg-white z-10 dark:bg-[#0D0D0D];
+  }
+
+  .chat {
+    @apply h-full w-full pt-[67px] pb-[30px] md:pb-[54px] overflow-x-hidden overflow-y-scroll flex justify-end;
+  }
+
+  .footer {
+    @apply absolute w-full bg-white right-0 bottom-0 dark:bg-[#0D0D0D];
+  }
+}

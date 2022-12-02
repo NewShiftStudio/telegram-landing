@@ -21,12 +21,8 @@ export default function Admin() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     signin(formData as SignInDto);
   };
-  useEffect(() => {
-    console.log(loading);
-  }, [loading]);
 
   if (loading) {
     return <p>Загрузка...</p>;

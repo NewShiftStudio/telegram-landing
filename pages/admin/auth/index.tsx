@@ -1,9 +1,8 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { ChangeEvent, FormEvent, useState } from 'react';
-import { useMutation } from 'react-query';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 
-import { SignInDto, authApi } from 'https/auth';
+import { SignInDto } from 'https/auth';
 
 import { useAuth } from 'hooks/useAuth';
 
@@ -25,12 +24,15 @@ export default function Admin() {
 
     signin(formData as SignInDto);
   };
+  useEffect(() => {
+    console.log(loading);
+  }, [loading]);
 
   if (loading) {
-    return null;
+    return <p>Загрузка...</p>;
   }
 
-  if (!loading && isAuth) {
+  if (isAuth) {
     router.push('/admin');
     return null;
   }

@@ -11,9 +11,7 @@ export type SigninResponse = {
 };
 
 class AuthApi {
-  private url: string;
-
-  constructor(url: string) {
+  constructor(private url: string) {
     this.url = url;
   }
 

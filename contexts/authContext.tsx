@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { ReactNode, useCallback, useMemo, useState } from 'react';
+import React, { ReactNode, useCallback, useEffect, useMemo, useState } from 'react';
 import { useMutation, useQuery } from 'react-query';
 
 import { SignInDto, authApi } from 'https/auth';
@@ -43,27 +43,31 @@ export const AuthProvider = ({ children }: Props) => {
     router.push('/admin/auth');
   };
 
-  const currentUserQuery = useQuery('current-user', () => authApi.getCurrentUser(), {
+  const { isLoading: isGetUsersLoading } = useQuery('current-user', () => authApi.getCurrentUser(), {
     onSuccess: onSuccessGetCurrentUser,
     onError: onErrorGetCurrentUser,
+    retry: false,
   });
 
-  const signinMutation = useMutation<unknown, ResponseError, SignInDto, unknown>(data => authApi.signin(data), {
-    onSuccess: onSuccessSigin,
-  });
-  const signoutMutation = useMutation<unknown, ResponseError, void, unknown>(() => authApi.signout(), {
-    onSuccess: onSuccessSignout,
-  });
-
-  const signin = useCallback(
-    async (data: SignInDto) => {
-      signinMutation.mutate(data);
+  const { isLoading: isSigninLoading, ...signinMutation } = useMutation<unknown, ResponseError, SignInDto, unknown>(
+    data => authApi.signin(data),
+    {
+      onSuccess: onSuccessSigin,
     },
-    [signinMutation],
   );
-  const signout = useCallback(async () => {
-    signoutMutation.mutate();
-  }, [signoutMutation]);
+  const { isLoading: isSignoutLoading, ...signoutMutation } = useMutation<unknown, ResponseError, void, unknown>(
+    () => authApi.signout(),
+    {
+      onSuccess: onSuccessSignout,
+    },
+  );
+
+  useEffect(() => {
+    setLoading(isGetUsersLoading || isSigninLoading || isSignoutLoading);
+  }, [isGetUsersLoading, isSigninLoading, isSignoutLoading]);
+
+  const signin = useCallback(signinMutation.mutate, [signinMutation]);
+  const signout = useCallback(signoutMutation.mutate, [signoutMutation]);
 
   const auth = useMemo(
     () => ({

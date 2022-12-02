@@ -13,10 +13,10 @@ function Admin() {
   const { isAuth, loading } = useAuth();
 
   useEffect(() => {
-    if (!isAuth) {
+    if (!loading && !isAuth) {
       router.push('/admin/auth');
     }
-  }, [isAuth, router]);
+  }, [isAuth, loading, router]);
 
   if (loading) return <p>Загрузка...</p>;
 

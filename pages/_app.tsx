@@ -4,7 +4,6 @@ import { CookiesProvider } from 'react-cookie';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
-import { AuthProvider } from 'contexts/authContext';
 import { ThemeProvider } from 'contexts/themeContext';
 
 import 'styles/globals.scss';
@@ -20,11 +19,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <div className='w-screen h-screen flex'>
         <QueryClientProvider client={queryClient}>
           <CookiesProvider>
-            <AuthProvider>
-              <ThemeProvider>
-                <Component {...pageProps} />
-              </ThemeProvider>
-            </AuthProvider>
+            <ThemeProvider>
+              <Component {...pageProps} />
+            </ThemeProvider>
           </CookiesProvider>
         </QueryClientProvider>
       </div>

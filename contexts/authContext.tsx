@@ -8,6 +8,7 @@ import { ResponseError } from 'types/ResponseError';
 
 type AuthContextType = {
   isAuth: boolean;
+  currentUser?: any;
   loading: boolean;
   signout: () => void;
   signin: (data: SignInDto) => void;
@@ -43,7 +44,7 @@ export const AuthProvider = ({ children }: Props) => {
     router.push('/admin/auth');
   };
 
-  const { isLoading: isGetUsersLoading } = useQuery('current-user', () => authApi.getCurrentUser(), {
+  const { data: currentUser, isLoading: isGetUsersLoading } = useQuery('current-user', () => authApi.getCurrentUser(), {
     onSuccess: onSuccessGetCurrentUser,
     onError: onErrorGetCurrentUser,
     retry: false,
@@ -72,11 +73,12 @@ export const AuthProvider = ({ children }: Props) => {
   const auth = useMemo(
     () => ({
       isAuth,
+      currentUser,
       loading,
       signin,
       signout,
     }),
-    [isAuth, signin, signout, loading],
+    [isAuth, currentUser, signin, signout, loading],
   );
 
   return <AuthContext.Provider value={auth}>{children}</AuthContext.Provider>;

@@ -2,6 +2,8 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 
+import { AuthProvider } from 'contexts/authContext';
+
 import { SignInDto } from 'https/auth';
 
 import { useAuth } from 'hooks/useAuth';
@@ -34,7 +36,7 @@ export default function Admin() {
   }
 
   return (
-    <>
+    <AuthProvider>
       <Head>
         <title>Вход</title>
       </Head>
@@ -55,6 +57,6 @@ export default function Admin() {
           </button>
         </form>
       </div>
-    </>
+    </AuthProvider>
   );
 }

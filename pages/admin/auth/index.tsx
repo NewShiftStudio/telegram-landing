@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import { ChangeEvent, FormEvent, ReactElement, useState } from 'react';
 
 import { AuthProvider } from 'contexts/authContext';
 
@@ -10,7 +10,7 @@ import { useAuth } from 'hooks/useAuth';
 
 import s from './auth.module.scss';
 
-export default function Admin() {
+export default function Auth() {
   const router = useRouter();
   const [formData, setFormData] = useState({});
 
@@ -36,7 +36,7 @@ export default function Admin() {
   }
 
   return (
-    <AuthProvider>
+    <>
       <Head>
         <title>Вход</title>
       </Head>
@@ -57,6 +57,10 @@ export default function Admin() {
           </button>
         </form>
       </div>
-    </AuthProvider>
+    </>
   );
 }
+
+Auth.getLayout = function getLayout(page: ReactElement) {
+  return <AuthProvider>{page}</AuthProvider>;
+};

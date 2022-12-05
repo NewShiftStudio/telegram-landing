@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { ReactElement, useEffect } from 'react';
+
+import { AuthProvider } from 'contexts/authContext';
 
 import { AdminLayout } from 'layouts/AdminLayout/AdminLayout';
 
@@ -36,5 +38,9 @@ function Admin() {
     </>
   );
 }
+
+Admin.getLayout = function getLayout(page: ReactElement) {
+  return <AuthProvider>{page}</AuthProvider>;
+};
 
 export default Admin;

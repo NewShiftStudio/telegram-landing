@@ -12,15 +12,15 @@ import { useAuth } from 'hooks/useAuth';
 
 function Admin() {
   const router = useRouter();
-  const { isAuth, loading } = useAuth();
+  const { isAuth, isLoading } = useAuth();
 
   useEffect(() => {
-    if (!loading && !isAuth) {
+    if (!isLoading && !isAuth) {
       router.push('/admin/auth');
     }
-  }, [isAuth, loading, router]);
+  }, [isAuth, isLoading, router]);
 
-  if (loading) return <p>Загрузка...</p>;
+  if (isLoading) return <p>Загрузка...</p>;
 
   if (!isAuth) {
     return null;

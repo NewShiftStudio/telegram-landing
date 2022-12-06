@@ -4,12 +4,13 @@ import { useMutation, useQuery } from 'react-query';
 
 import { SignInDto, authApi } from 'https/auth';
 
+import { CurrentUser } from 'types/CurrentUser';
 import { ResponseError } from 'types/ResponseError';
 
 type AuthContextType = {
   isAuth: boolean;
-  currentUser?: any;
-  loading: boolean;
+  currentUser?: CurrentUser;
+  isLoading: boolean;
   signout: () => void;
   signin: (data: SignInDto) => void;
 };
@@ -22,8 +23,8 @@ export const AuthContext = React.createContext({} as AuthContextType);
 
 export const AuthProvider = ({ children }: Props) => {
   const router = useRouter();
-  const [isAuth, setIsAuth] = useState<boolean>(false);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [isAuth, setIsAuth] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const onSuccessGetCurrentUser = () => {
     setIsAuth(true);
@@ -56,6 +57,7 @@ export const AuthProvider = ({ children }: Props) => {
       onSuccess: onSuccessSigin,
     },
   );
+
   const { isLoading: isSignoutLoading, ...signoutMutation } = useMutation<unknown, ResponseError, void, unknown>(
     () => authApi.signout(),
     {
@@ -63,9 +65,10 @@ export const AuthProvider = ({ children }: Props) => {
     },
   );
 
-  useEffect(() => {
-    setLoading(isGetUsersLoading || isSigninLoading || isSignoutLoading);
-  }, [isGetUsersLoading, isSigninLoading, isSignoutLoading]);
+  useMemo(
+    () => setIsLoading(isGetUsersLoading || isSigninLoading || isSignoutLoading),
+    [isGetUsersLoading, isSigninLoading, isSignoutLoading],
+  );
 
   const signin = useCallback(signinMutation.mutate, [signinMutation]);
   const signout = useCallback(signoutMutation.mutate, [signoutMutation]);
@@ -74,11 +77,11 @@ export const AuthProvider = ({ children }: Props) => {
     () => ({
       isAuth,
       currentUser,
-      loading,
+      isLoading,
       signin,
       signout,
     }),
-    [isAuth, currentUser, signin, signout, loading],
+    [isAuth, currentUser, signin, signout, isLoading],
   );
 
   return <AuthContext.Provider value={auth}>{children}</AuthContext.Provider>;

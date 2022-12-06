@@ -10,11 +10,13 @@ import { useAuth } from 'hooks/useAuth';
 
 import s from './auth.module.scss';
 
+const getDefaultFormData = (): SignInDto => ({ email: '', password: '' });
+
 export default function Auth() {
   const router = useRouter();
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState<SignInDto>(getDefaultFormData);
 
-  const { isAuth, loading, signin } = useAuth();
+  const { isAuth, isLoading, signin } = useAuth();
 
   const handleChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -23,10 +25,10 @@ export default function Auth() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    signin(formData as SignInDto);
+    signin(formData);
   };
 
-  if (loading) {
+  if (isLoading) {
     return <p>Загрузка...</p>;
   }
 

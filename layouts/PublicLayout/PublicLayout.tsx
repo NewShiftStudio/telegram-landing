@@ -13,7 +13,7 @@ import { chatsList } from 'constants/chats';
 import { menuLinks, phoneLink } from 'constants/commonLinks';
 import useMediaQuery from 'hooks/useMediaQuery';
 
-import s from './AppLayout.module.scss';
+import s from './PublicLayout.module.scss';
 
 type Props = {
   children: ReactNode;
@@ -35,7 +35,7 @@ const resizableProps: ResizableProps = {
   },
 };
 
-export const AppLayout = ({ children }: Props) => {
+export const PublicLayout = ({ children }: Props) => {
   const router = useRouter();
   const query = (router.query.id || '/') as string;
 

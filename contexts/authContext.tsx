@@ -24,7 +24,6 @@ export const AuthContext = React.createContext({} as AuthContextType);
 export const AuthProvider = ({ children }: Props) => {
   const router = useRouter();
   const [isAuth, setIsAuth] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
 
   const onSuccessGetCurrentUser = () => {
     setIsAuth(true);
@@ -65,11 +64,7 @@ export const AuthProvider = ({ children }: Props) => {
     },
   );
 
-  useMemo(
-    () => setIsLoading(isGetUsersLoading || isSigninLoading || isSignoutLoading),
-    [isGetUsersLoading, isSigninLoading, isSignoutLoading],
-  );
-
+  const isLoading = isGetUsersLoading || isSigninLoading || isSignoutLoading;
   const signin = useCallback(signinMutation.mutate, [signinMutation]);
   const signout = useCallback(signoutMutation.mutate, [signoutMutation]);
 
